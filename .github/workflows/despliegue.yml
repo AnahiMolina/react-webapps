@@ -1,0 +1,50 @@
+# Nombre del flujo de trabajo
+name: Puesta a produccion
+
+# Cuando se ejecuta?
+on:
+  push:
+    branches: ['main']
+
+# Permisos
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Habilitar la concurrencia (ejecutar dos cosas a la vez)
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+# Trabajos 
+jobs:
+  #Nombre del trabajo
+  desplegar:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    #Pasos para seguir el despliegue
+    steps:
+      - name: Verificar
+        uses: actions/checkout@v3
+      - name: Configurar NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
+      - name: Instalar dependencia
+        run: npm install
+      - name: Construir
+        run: npm run build
+      - name: Configurar Github Pages
+        uses: actions/configure-pages@v3
+      - name: Cargar los archivos
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Ruta de los archivos para cargar
+          path: './dist'
+      - name: Desplegar to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
