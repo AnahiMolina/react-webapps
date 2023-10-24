@@ -16,7 +16,7 @@ import ToDo from './Pages/ToDo'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename='/react-webapps/'>
     <Routes>
       <Route path='/' element={<Inicio />}/>
       <Route path='/colores' element={<Colores />}/>
