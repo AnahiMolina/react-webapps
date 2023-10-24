@@ -1,0 +1,169 @@
+.titulos{
+    text-shadow: 0px 0px 9px #ffffff;
+}
+
+#inicio .card {
+    width: 100%;
+    height: 100px;
+    background-color: #008f77;
+}
+#backInicio h1{
+    color: aliceblue;
+}
+#backInicio .row{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.card>* {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+#backInicio{
+    background-image: url(https://cdn.vectorstock.com/i/preview-1x/02/22/blue-background-empty-room-studio-with-shelf-dark-vector-43130222.jpg);
+    background-repeat : no-repeat;
+    background-size  : cover;
+    margin-top: 40px;
+    max-height: 100vh;
+    min-height: auto;
+    width: 600vh
+}
+#inicio{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    height: 65vh;
+}
+
+
+
+/*Navbar*/
+.nav-link{
+    text-decoration: none;
+    color: white;
+}
+
+/*Colores*/
+#colores .container {
+    background-color: color;
+    height: 100vh
+}
+
+.centro {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/*Caracteres*/
+#Palabras textarea {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+
+/*Reloj*/
+@font-face{
+    font-family:'TimeTraveler';font-style:normal;font-weight:400;src:url('/TimeTravelerPal-Normal-Regular.ttf') format('truetype')
+}
+
+#tiempo{
+    font-family: 'TimeTraveler';
+    font-size: 18vh;
+    color: aliceblue;
+    text-shadow: 7px 0px 12px #008f77;
+}
+#backReloj{
+    background-image: url(https://cdn.vectorstock.com/i/preview-1x/02/22/blue-background-empty-room-studio-with-shelf-dark-vector-43130222.jpg);
+    background-repeat : no-repeat;
+    background-size  : cover;
+    margin-top: 40px;
+    max-height: 100vh;
+    min-height: auto;
+    width: 600vh
+}
+#timer{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 65vh;
+}
+
+
+/*Calculadora*/
+#calculadora{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 40%;
+    height: 65vh;
+}
+#calculadora .row{
+    background-color: rgba(0, 0, 0, 0.664);
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px #008f77;
+}
+#backCalc{
+    background-image: url(https://cdn.vectorstock.com/i/preview-1x/02/22/blue-background-empty-room-studio-with-shelf-dark-vector-43130222.jpg);
+    background-repeat : no-repeat;
+    background-size  : cover;
+    margin-top: 40px;
+    max-height: 100vh;
+    min-height: auto;
+    width: 600vh
+}
+#ingreso{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+#teclado button{
+    width: 23%;
+    padding: 4%;
+    margin: 1%;
+    margin-bottom: 10px;
+}
+.operacion{
+    background-color: #008f77;
+}
+.numero{
+    background-color: #212529;
+    color:#008f77;
+}
+
+
+
+/*clima*/
+#clima{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 40%;
+    height: 65vh;
+}
+#clima .card{
+    height: 50vh;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.664);
+    color: aliceblue;
+}
+#backClima{
+    background-image: url(https://images.unsplash.com/photo-1533985062386-ef0837f31bc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGllbnRlJTIwZGUlMjBsZW9ufGVufDB8fDB8fHww&w=1000&q=80);
+    background-repeat : no-repeat;
+    background-size  : cover;
+    margin-top: 40px;
+    max-height: 100vh;
+    min-height: auto;
+    width: 600vh
+}
+#grados{
+    font-size: 120px;
+}
+
+    
