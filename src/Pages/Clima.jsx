@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import { Await, json } from 'react-router-dom';
 
 export default function Clima() {
-        /*const [dato, setDato] = useState('');
+        const [dato, setDato] = useState('');
         const [temp,setTemp] = useState ('');
         const [desc, setDesc] = useState ('');
         const [tmax,setTmax] = useState ('');
@@ -33,7 +33,7 @@ export default function Clima() {
               setTmin(data.main.temp_min);
              })
             .catch(error => { console.error('Error:', error); });
-        }, []);*/
+        }, []);
 
     return (
         <>
@@ -49,10 +49,10 @@ export default function Clima() {
                         <div className='col-12'>
                             <div className="card">
                                 <h1>{/*{dato}*/}h</h1>
-                                <p id='grados'>{/*{temp}*/}8 ºK</p>
+                                <p id='grados'>{/*{temp}*/} ºK</p>
                                 <h5>Estado{/*{desc}*/}</h5>
-                                <p>Temperatura Máxima: {/*{tmax}*/}8ºK</p>
-                                <p>Temperatura Minima: {/*{tmin}*/}8 ºK</p>
+                                <p>Temperatura Máxima: {/*{tmax}*/}ºK</p>
+                                <p>Temperatura Minima: {/*{tmin}*/} ºK</p>
                             </div>
                         </div>
                     </div>
