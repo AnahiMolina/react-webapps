@@ -7,7 +7,8 @@ export default function Clima() {
         const [temp,setTemp] = useState ('');
         const [desc, setDesc] = useState ('');
         const [tmax,setTmax] = useState ('');
-        const [tmin,setTmin] = useState ('')
+        const [tmin,setTmin] = useState ('');
+        const [weather,setWeather] = useState ('');
       
         useEffect(() => {
           fetch('https://weather-api99.p.rapidapi.com/weather?city=teziutlan',
@@ -27,13 +28,16 @@ export default function Clima() {
       
             .then(data => { 
               setDato(data.name);
-              setTemp(data.main.feels_like);
-              setDesc(data.weather.description);
-              setTmax(data.main.temp_max);
-              setTmin(data.main.temp_min);
+              setDesc(data.weather[0].description);
+              setTemp(`${Math.ceil(data.main.feels_like - 273.15)} °C`);
+              setTmax(`${Math.round(data.main.temp_max - 273.15)} °C`);
+              setTmin(`${Math.round(data.main.temp_min - 273.15)} °C`);
+              setWeather()
              })
             .catch(error => { console.error('Error:', error); });
         }, []);
+
+        //GradosCelcius= ({dato} - 273.15)
 
     return (
         <>
@@ -48,11 +52,12 @@ export default function Clima() {
                     <div className='row'>
                         <div className='col-12'>
                             <div className="card">
-                                <h1>{/*{dato}*/}h</h1>
-                                <p id='grados'>{/*{temp}*/} ºK</p>
-                                <h5>Estado{/*{desc}*/}</h5>
-                                <p>Temperatura Máxima: {/*{tmax}*/}ºK</p>
-                                <p>Temperatura Minima: {/*{tmin}*/} ºK</p>
+                                <h1>{dato}</h1>
+                                <p id='grados'>{temp}</p>
+                                <h5>{desc}</h5>
+                                <hr></hr>
+                                <p>Temperatura Máxima: {tmax}</p>
+                                <p>Temperatura Minima: {tmin}</p>
                             </div>
                         </div>
                     </div>
