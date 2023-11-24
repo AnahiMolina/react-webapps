@@ -19,17 +19,20 @@ export default function Caracteres() {
   return (
     <>
       <Navbar />
-      <div className='text-center'>
-        <h1>Contador de Caracteres</h1>
-        <br />
-      </div>
-      <div className='container'>
-        <div className='text-center'>
-          <textarea id='Palabras' className='form-control' rows="4" value={inputText} onChange={cambiante} />
-        </div>
-        <div className='text-center'>
+      <div id='background' className='container-fluid'>
+        <div className='text-center titulos'>
+          <h1>Contador de Caracteres</h1>
           <br />
-          <h3>Palabras:{word} Caracteres:{char}</h3>
+        </div>
+
+        <div className='container'>
+          <div className='text-center'>
+            <textarea id='Palabras' className='form-control' rows="4" value={inputText} onChange={cambiante} />
+          </div>
+          <div className='text-center'>
+            <br />
+            <h3>Palabras:{word} Caracteres:{char}</h3>
+          </div>
         </div>
       </div>
     </>

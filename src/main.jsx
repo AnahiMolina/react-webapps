@@ -13,6 +13,7 @@ import Storage from './Pages/Storage'
 import Clima from './Pages/Clima'
 import InfoClima from './Pages/InfoClima'
 import ToDo from './Pages/ToDo'
+import Contrasenias from './Pages/Contrasenias'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -23,13 +24,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/caracteres' element={<Caracteres />}/>
       <Route path='/reloj' element={<Reloj />}/>
       <Route path='/calculadora' element={<Calculadora />}/>
+      <Route path='/clima' element={<Clima />}/>
+      <Route path='/tareas' element={<ToDo />}/>
+      <Route path='/contrasenias' element={<Contrasenias />}/>
+      <Route path='/storage' element={<Storage />}/>
       <Route path='/referencias' element={<Referencias/>}/>
       <Route path='/contexto' element={<Contexto />}/>
-      <Route path='/storage' element={<Storage />}/>
-      <Route path='/clima' element={<Clima />}/>
       <Route path='/infoclima' element={<InfoClima />}/>
-      <Route path='/storage' element={<Storage />}/>
-      <Route path='/tareas' element={<ToDo />}/>
     </Routes>
   </BrowserRouter>,
 )

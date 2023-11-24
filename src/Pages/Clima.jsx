@@ -3,13 +3,14 @@ import Navbar from '../components/Navbar'
 import { Await, json } from 'react-router-dom';
 
 export default function Clima() {
+        
         const [dato, setDato] = useState('');
         const [temp,setTemp] = useState ('');
         const [desc, setDesc] = useState ('');
         const [tmax,setTmax] = useState ('');
         const [tmin,setTmin] = useState ('');
         const [weather,setWeather] = useState ('');
-      
+      /*
         useEffect(() => {
           fetch('https://weather-api99.p.rapidapi.com/weather?city=teziutlan',
             {
@@ -35,15 +36,15 @@ export default function Clima() {
               setWeather()
              })
             .catch(error => { console.error('Error:', error); });
-        }, []);
+        }, []);*/
 
         //GradosCelcius= ({dato} - 273.15)
 
     return (
         <>
             <Navbar />
-            <div id='backClima' className='container'>
-                <div className='text-center'>
+            <div id='background' className='container-fluid'>
+                <div className='text-center titulos'>
                     <h1>Clima</h1>
                     <i className='bx bx-sun bx-flashing bx-lg'></i>
                 </div>
@@ -66,3 +67,4 @@ export default function Clima() {
         </>
     )
 }
+

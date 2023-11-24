@@ -39,7 +39,7 @@ export default function Calculadora() {
     return (
         <>
             <Navbar />
-            <div id='backCalc' className='container'>
+            <div id='background' className='container-fluid'>
 
                 <div className='text-center titulos'>
                     <h1>Calculadora</h1>
@@ -56,7 +56,7 @@ export default function Calculadora() {
                             <div className='col-12'>
                                 <button onClick={() => agregarNumero(7)} className="btn numero">7</button>
                                 <button onClick={() => agregarNumero(8)} className="btn numero">8</button>
-                                <button onClick={() => agregarNumero(9)} className="btn  numero">9</button>
+                                <button onClick={() => agregarNumero(9)} className="btn numero">9</button>
                                 <button onClick={() => agregarOperador('*')} className="btn operacion">*</button>
                             </div>
 

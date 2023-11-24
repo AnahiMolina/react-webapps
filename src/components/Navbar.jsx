@@ -29,23 +29,19 @@ export default function Navbar() {
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/clima">
-                            <i className='bx bx-sun bx-tada-hover'>
-                            </i>Clima</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/infoclima">
-                            <i className='bx bx-ghost bx-tada-hover'>
-                            </i>InfoClima</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/storage">
-                            <i className='bx bx-ghost bx-tada-hover'>
-                            </i>Storage</Link>
+                            <i className='bx bx-sun bx-tada-hover' />Clima</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/tareas">
-                            <i className='bx bx-ghost bx-tada-hover'>
-                            </i>Tareas</Link>
+                            <i className='bx bx-clipboard bx-tada-hover' />Tareas</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/contrasenias">
+                            <i className='bx bx-dialpad-alt bx-tada-hover' />Contraseñas</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/storage">
+                            <i className='bx bx-ghost bx-tada-hover' />Storage</Link>
                     </li>
                 </ul>
             </div>

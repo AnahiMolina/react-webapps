@@ -6,13 +6,12 @@ export default function Inicio() {
     return (
         <>
             <Navbar />
-            <div id='backInicio' className='container'>
-                <div className='text-center'>
-                    <h1>Bienvenido</h1>
+            <div id='background' className='container-fluid'>
+                <div className='text-center titulos'>
+                    <h1>WebApps</h1>
                     <i className='bx bxs-heart bx-burst bx-lg'></i>
                 </div>
-
-                <div id='inicio' className='container-fluid'>
+                <div id='inicio' className='container'>
                     <div className="row">
                         <div className="col-3">
                             <div className="card">
@@ -58,11 +57,6 @@ export default function Inicio() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className='row'>
-                    <div className='text-center'>
-                        <h1>Escoge uno para empezar...</h1>
-                    </div>
                     </div>
                 </div>
             </div>

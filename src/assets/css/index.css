@@ -1,39 +1,51 @@
-.titulos{
-    text-shadow: 0px 0px 9px #ffffff;
+.titulos {
+    text-shadow: 0px 0px 5px #002525;
+    padding: 1%;
 }
 
+#background {
+    background-image: url(https://slidebazaar.com/wp-content/uploads/2022/05/powerpoint-white-background-slide-SB02298.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 92vh;
+}
+
+/*Inicio*/
 #inicio .card {
     width: 100%;
     height: 100px;
-    background-color: #008f77;
+    background-color: #212529;
 }
-#backInicio h1{
-    color: aliceblue;
-}
-#backInicio .row{
+
+/*#backInicio h1{
+    color: rgb(0, 0, 0)9, 143);
+}*/
+#backInicio .row {
     margin-bottom: 30px;
     margin-top: 30px;
 }
+
 .card>* {
     display: flex;
     align-items: center;
     justify-content: center;
 
 }
+
 a {
     text-decoration: none;
-    color: white;
+    color: #02ffd5;
 }
-#backInicio{
-    background-image: url(https://cdn.vectorstock.com/i/preview-1x/02/22/blue-background-empty-room-studio-with-shelf-dark-vector-43130222.jpg);
-    background-repeat : no-repeat;
-    background-size  : cover;
+
+#backInicio {
     margin-top: 40px;
     max-height: 100vh;
     min-height: auto;
     width: 600vh
 }
-#inicio{
+
+#inicio {
     margin-top: 20px;
     margin-bottom: 20px;
     width: 80%;
@@ -41,11 +53,14 @@ a {
 }
 
 
-
 /*Navbar*/
-.nav-link{
+.nav-link {
     text-decoration: none;
     color: white;
+}
+
+.nav-link:hover {
+    color: #02ffd5;
 }
 
 /*Colores*/
@@ -72,26 +87,21 @@ a {
 
 
 /*Reloj*/
-@font-face{
-    font-family:'TimeTraveler';font-style:normal;font-weight:400;src:url('/TimeTravelerPal-Normal-Regular.ttf') format('truetype')
+@font-face {
+    font-family: 'TimeTraveler';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/TimeTravelerPal-Normal-Regular.ttf') format('truetype')
 }
 
-#tiempo{
+#tiempo {
     font-family: 'TimeTraveler';
     font-size: 18vh;
-    color: aliceblue;
-    text-shadow: 7px 0px 12px #008f77;
+    color: #002525;
+    text-shadow: 0px 0px 13px #b8ffe1;
 }
-#backReloj{
-    background-image: url(https://cdn.vectorstock.com/i/preview-1x/02/22/blue-background-empty-room-studio-with-shelf-dark-vector-43130222.jpg);
-    background-repeat : no-repeat;
-    background-size  : cover;
-    margin-top: 40px;
-    max-height: 100vh;
-    min-height: auto;
-    width: 600vh
-}
-#timer{
+
+#timer {
     margin-top: 20px;
     margin-bottom: 20px;
     width: 100%;
@@ -100,70 +110,98 @@ a {
 
 
 /*Calculadora*/
-#calculadora{
+#calculadora {
     margin-top: 30px;
     margin-bottom: 30px;
-    width: 40%;
+    width: 30%;
     height: 65vh;
 }
-#calculadora .row{
+
+#calculadora .row {
     background-color: rgba(0, 0, 0, 0.664);
     border-radius: 8px;
-    box-shadow: 0px 0px 20px #008f77;
+    box-shadow: 0px 0px 0px #b1fff2;
 }
-#backCalc{
-    background-image: url(https://cdn.vectorstock.com/i/preview-1x/02/22/blue-background-empty-room-studio-with-shelf-dark-vector-43130222.jpg);
-    background-repeat : no-repeat;
-    background-size  : cover;
-    margin-top: 40px;
-    max-height: 100vh;
-    min-height: auto;
-    width: 600vh
-}
-#ingreso{
+
+#ingreso {
     margin-bottom: 20px;
     margin-top: 20px;
 }
-#teclado button{
+
+#teclado button {
     width: 23%;
     padding: 4%;
     margin: 1%;
     margin-bottom: 10px;
 }
-.operacion{
+
+.operacion {
     background-color: #008f77;
 }
-.numero{
+
+.numero:hover {
+    background-color: #02ffd5;
+}
+
+.numero {
     background-color: #212529;
-    color:#008f77;
+    color: #008f77;
 }
 
 
 
 /*clima*/
-#clima{
+#clima {
     margin-top: 30px;
     margin-bottom: 30px;
     width: 40%;
     height: 65vh;
 }
-#clima .card{
+
+#clima .card {
     height: 50vh;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.664);
     color: aliceblue;
 }
-#backClima{
-    background-image: url(https://images.unsplash.com/photo-1533985062386-ef0837f31bc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGllbnRlJTIwZGUlMjBsZW9ufGVufDB8fDB8fHww&w=1000&q=80);
-    background-repeat : no-repeat;
-    background-size  : cover;
-    margin-top: 40px;
-    max-height: 100vh;
-    min-height: auto;
-    width: 600vh
-}
-#grados{
+
+#grados {
     font-size: 265%;
 }
 
-    
+
+/*Contrasenias*/
+#contrasenia {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    height: 65vh;
+}
+
+.PasBoton {
+    margin-right: 9px;
+}
+
+.PasMostrar {
+    font-size: 2rem;
+}
+
+.seguridadNula {
+    background-color: black;
+}
+
+.seguridadBaja {
+    background-color: red;
+}
+
+.seguridadMedia {
+    background-color: yellow;
+}
+
+.seguridadAlta {
+    background-color: green;
+}
+
+.seguridadMaxima{
+    background-color: #02ffd5;
+}

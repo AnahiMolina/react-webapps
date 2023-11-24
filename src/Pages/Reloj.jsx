@@ -1,19 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import Navbar from '../components/Navbar'
+import React, { useEffect } from 'react';
+import Navbar from '../components/Navbar';
 
 export default function Reloj() {
+  useEffect(() => {
+    
+    function actualizarReloj() {
+      const reloj = document.getElementById("reloj");
+      const fecha = document.getElementById("fecha");
 
-  function actualizarReloj() {
-    const reloj = document.getElementById("reloj");
-    reloj.textContent = new Date().toLocaleTimeString();
-  }
+      const now = new Date();
+      reloj.textContent = now.toLocaleTimeString();
+      fecha.textContent = now.toLocaleDateString();
+    }
 
-  setInterval(actualizarReloj, 1000);
+    const intervalId = setInterval(actualizarReloj, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []); 
 
   return (
-    <div>
+    <>
       <Navbar />
-      <div id='backReloj' className='container'>
+      <div id='background' className='container-fluid'>
         <div className='text-center titulos'>
           <h1>Reloj</h1>
           <i className='bx bx-time-five bx-spin bx-lg'></i>
@@ -26,13 +34,12 @@ export default function Reloj() {
                 <div className='text-center' id='reloj' />
               </div>
               <div className='text-center'>
-                <h1>Fecha</h1>
+                <h1 id='fecha' />
               </div>
             </div>
           </div>
-
         </div>
       </div>
-    </div>
-  )
+    </>
+  );
 }
