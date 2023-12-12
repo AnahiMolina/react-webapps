@@ -76,15 +76,11 @@ a {
     justify-content: center;
 }
 
-
-
 /*Caracteres*/
 #Palabras textarea {
     padding: 10px;
     border-radius: 5px;
 }
-
-
 
 /*Reloj*/
 @font-face {
@@ -136,18 +132,23 @@ a {
 }
 
 .operacion {
-    background-color: #008f77;
+    background-color: #02ffd5;
+    color: #212529;
 }
 
-.numero:hover {
-    background-color: #02ffd5;
+.operacion:hover{
+    background-color: #808080;
+    color: #02ffd5;
 }
 
 .numero {
     background-color: #212529;
-    color: #008f77;
+    color: #02ffd5;
 }
 
+.numero:hover {
+    background-color: #418d80;
+}
 
 
 /*clima*/
@@ -169,6 +170,67 @@ a {
     font-size: 265%;
 }
 
+#clima .form {
+    width: 100%;
+    height: 50px;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+#clima .form input {
+    width: 100%;
+    height: 100%;
+    background: none;
+    color: #fff;
+    padding-top: 21px;
+    border: none;
+    outline: 0px;
+}
+
+#clima .form .lbl-nombre {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #ffffff2d;
+
+}
+
+#clima .form .lbl-nombre:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid #02ffd5;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+
+#clima .text-nomb {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+#clima .form input:focus+.lbl-nombre .text-nomb,
+.form input:valid+.lbl-nombre .text-nomb {
+    transform: translateY(-100%);
+    font-size: 14px;
+    color: #02ffd5;
+}
+
+#clima .form input:focus+.lbl-nombre:after,
+.form input:valid+.lbl-nombre:after {
+    transform: translateX(0%);
+}
+
 
 /*Contrasenias*/
 #contrasenia {
@@ -176,6 +238,13 @@ a {
     margin-bottom: 20px;
     width: 80%;
     height: 65vh;
+}
+
+.fondoClaro{
+    height: 50vh;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.664);
+    color: aliceblue;
 }
 
 .PasBoton {
@@ -199,9 +268,5 @@ a {
 }
 
 .seguridadAlta {
-    background-color: green;
-}
-
-.seguridadMaxima{
     background-color: #02ffd5;
 }

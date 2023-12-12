@@ -47,11 +47,11 @@ export default function ToDo() {
           <div className='row mt-3'>
             <div className='col-3'>
               <input ref={input} type='text' placeholder='Nueva tarea' className='form-control' />
-              <button onClick={agregar_tarea} className='btn btn-secondary w-100 mt-3'>
+              <button onClick={agregar_tarea} className='btn btn-secondary w-100 mt-3 operacion'>
                 <i className='bx bx-plus' /> Agregar
               </button>
-              <button onClick={limpiar_tareas} className='btn btn-warning w-100 mt-3'>
-                <i className='bx bx-trash' /> Eliminar
+              <button onClick={limpiar_tareas} className='btn btn-secondary w-100 mt-3 numero'>
+                <i className='bx bx-trash' /> Eliminar Todo
               </button>
             </div>
             <div className='col-9'>

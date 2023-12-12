@@ -39,10 +39,6 @@ export default function Navbar() {
                         <Link className="nav-link" to="/contrasenias">
                             <i className='bx bx-dialpad-alt bx-tada-hover' />Contraseñas</Link>
                     </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/storage">
-                            <i className='bx bx-ghost bx-tada-hover' />Storage</Link>
-                    </li>
                 </ul>
             </div>
         </nav>

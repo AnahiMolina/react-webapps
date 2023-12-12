@@ -24,7 +24,7 @@ export default function Reloj() {
       <div id='background' className='container-fluid'>
         <div className='text-center titulos'>
           <h1>Reloj</h1>
-          <i className='bx bx-time-five bx-spin bx-lg'></i>
+          <i className='bx bx-time-five bx-spin-hover bx-lg'></i>
         </div>
 
         <div id='timer' className='container-fluid'>

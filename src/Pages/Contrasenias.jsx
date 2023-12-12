@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
-import Alerta from '../components/Alerta';
 
 export default function Contrasenias() {
     const letras = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz';
@@ -8,31 +7,28 @@ export default function Contrasenias() {
     const numeros = '0123456789';
 
     const [contrasenia, setContrasenia] = useState('');
-    const [longitud, setLongitud] = useState(8);
+    const [longitud, setLongitud] = useState(10);
     const [incluyeLetras, setIncluyeLetras] = useState(true);
     const [incluyeNumeros, setIncluyeNumeros] = useState(true);
     const [incluyeSimbolos, setIncluyeSimbolos] = useState(true);
     const [textoSeguridad, setTextoSeguridad] = useState('')
 
-    let maxima = new RegExp('^(?=.*[A-Z]{2})(?=.*[0-9]{2})(?=.*[!@#$%^&*]{2})(?=.*[a-z])[A-Za-z0-9!@#$%^&*]{10,}$')
 
-    let alta = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=])(?=.*[a-zA-Z\d@#$%^&+=]).{8,9}$')
-    let media = new RegExp('^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z]).{7,}$')
+    let alta = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{10,})')
+    let media = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
     let baja = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$')
 
     function calcularFortaleza(contraseña) {
         let seguridad = 0;
 
-        if (maxima.test(contraseña)) {
+        if (alta.test(contraseña)) {
             seguridad = 100;
-        } else if (alta.test(contraseña)) {
-            seguridad = 90;
         } else if (media.test(contraseña)) {
             seguridad = 50;
         } else if (baja.test(contraseña)) {
             seguridad = 25
         } else {
-            seguridad = 1
+            seguridad = 5
         }
         return seguridad;
     }
@@ -43,21 +39,19 @@ export default function Contrasenias() {
         let texto = '';
 
         if (seguridad == 100) {
-            barraClass = 'seguridadMaxima';
-            texto = 'Seguridad Maxima'
-        } else if (seguridad == 90) {
             barraClass = 'seguridadAlta';
             texto = 'Seguridad Alta'
         } else if (seguridad == 50) {
             barraClass = 'seguridadMedia';
             texto = 'Seguridad Media'
-        } else  if (seguridad == 25){
-            barraClass = 'seguridadBaja'
+        } else if (seguridad == 25) {
+            barraClass = 'seguridadBaja';
             texto = 'Seguridad Baja'
         } else {
             barraClass = 'seguridadNula'
-            texto = 'Seguridad Nula'
+            texto = 'Seguridad muy Baja'
         }
+
 
         setTextoSeguridad(texto)
 
@@ -103,15 +97,18 @@ export default function Contrasenias() {
             <Navbar />
             <div id='background' className='container-fluid'>
                 <div className='text-center titulos'>
-                    <h1>Generar Contraseñas</h1>
+                    <h1>Contraseñas</h1>
                 </div>
                 <div id='contrasenia' className='container'>
                     <div className='row'>
-                        <div className='col-4'>
+                        <div className='col-6'>
+                            <input type="text" className="input form-control PasMostrar" value={contrasenia} />
+                            {/*Barra de progreso*/}
+                            <div className="progress mt-1" role="progressbar" aria-label="Seguridad" aria-valuemin="0" aria-valuemax="100">
+                                <div className="progress-bar" id="seguridad"></div>
+                            </div>
+                            <h3>{textoSeguridad}</h3>
                             <div className='card'>
-                                <div className='card-body'>
-                                    <h3>Personalizar</h3>
-                                </div>
                                 <ul className="list-group list-group-flush">
                                     <li className="list-group-item mt-2">
                                         <h6>Longitud:</h6>
@@ -132,17 +129,16 @@ export default function Contrasenias() {
                                             <label className="form-check-label" htmlFor="simbolos">Símbolos</label>
                                         </div>
                                     </li>
-                                    <li className="list-group-item">Tercero</li>
+                                    <li className="list-group-item">
+                                        <button onClick={() => crear(longitud)} className="btn btn-primary PasBoton w-100 mt-3">Generar</button>
+                                        <button onClick={copiar} className="btn btn-primary PasBoton w-100 mt-3">Copiar</button><br />
+                                    </li>
                                 </ul>
                             </div>
-                            <button onClick={() => crear(longitud)} className="btn btn-primary PasBoton w-100 mt-3">Generar</button>
-                            <button onClick={copiar} className="btn btn-primary PasBoton w-100 mt-3">Copiar</button><br />
                         </div>
 
-                        <div className='col-8'>
-                            <div className='card'>
-                                <input type="text" className="input form-control PasMostrar" value={contrasenia} />
-                            </div>
+                        <div className='col-6'>
+                            <input type="text" className="input form-control PasMostrar" />
                             {/*Barra de progreso*/}
                             <div className="progress mt-1" role="progressbar" aria-label="Seguridad" aria-valuemin="0" aria-valuemax="100">
                                 <div className="progress-bar" id="seguridad"></div>

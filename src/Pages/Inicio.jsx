@@ -9,7 +9,7 @@ export default function Inicio() {
             <div id='background' className='container-fluid'>
                 <div className='text-center titulos'>
                     <h1>WebApps</h1>
-                    <i className='bx bxs-heart bx-burst bx-lg'></i>
+                    <i className='bx bxs-heart bx-burst-hover bx-lg'></i>
                 </div>
                 <div id='inicio' className='container'>
                     <div className="row">

@@ -43,7 +43,7 @@ export default function Calculadora() {
 
                 <div className='text-center titulos'>
                     <h1>Calculadora</h1>
-                    <i className='bx bx-math bx-tada bx-lg'></i>
+                    <i className='bx bx-math bx-tada-hover bx-lg'></i>
                 </div>
 
                 <div id='calculadora' className="container">
