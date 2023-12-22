@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Router } from 'react-router-dom'
 import Colores from './Pages/Colores'
 import Caracteres from './Pages/Caracteres'
 import Inicio from './Pages/Inicio'
@@ -14,6 +14,8 @@ import Clima from './Pages/Clima'
 import InfoClima from './Pages/InfoClima'
 import ToDo from './Pages/ToDo'
 import Contrasenias from './Pages/Contrasenias'
+import Navbar from './components/Navbar'
+import NavbarRigth from './components/NavbarRigth'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -31,6 +33,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/referencias' element={<Referencias/>}/>
       <Route path='/contexto' element={<Contexto />}/>
       <Route path='/infoclima' element={<InfoClima />}/>
+      <Route path='/prueba' element={<NavbarRigth />}/>
+      <Route path='/navbar1' element={<Navbar />}/>
     </Routes>
   </BrowserRouter>,
 )
