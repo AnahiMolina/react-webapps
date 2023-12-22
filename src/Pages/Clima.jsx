@@ -41,8 +41,11 @@ export default function Clima() {
         case 'scattered clouds':
           icono = 'bx bxl-soundcloud'
           break;
-          case 'overcast clouds':
+        case 'overcast clouds':
           icono = 'bx bxs-cloud';
+          break
+        case 'broken clouds':
+          icono = 'fa-solid fa-cloud-sun'
           break
         default:
           icono = 'bx bx-question-mark';
@@ -62,8 +65,7 @@ export default function Clima() {
       <Navbar />
       <div id='background' className='container-fluid-sm'>
         <div className='text-center titulos'>
-          <h1>Clima</h1>
-          <i className='bx bx-sun bx-flashing-hover bx-lg'></i>
+          <h1><i className='bx bx-sun bx-flashing-hover bx-lg'/> Clima</h1>
         </div>
 
         <div id='clima' className='container-md'>
@@ -84,7 +86,7 @@ export default function Clima() {
                 <h1 className='mt-3'>{dato}</h1>
                 <p id='grados'>{temp}</p>
                 <h5>{desc}</h5>
-                <i className={icono}></i>
+                <i id='icono' className={icono}></i>
                 <hr></hr>
                 <p>Temperatura Máxima: {tmax}</p>
 

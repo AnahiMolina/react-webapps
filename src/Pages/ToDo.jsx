@@ -33,17 +33,21 @@ export default function ToDo() {
     localStorage.setItem('tareas', JSON.stringify(lista))
   }
 
+  const editar = (e) => {
+    
+  }
+
 
   return (
-    <div>
+    <>
       <Navbar />
-      <div id='background' className='container-fluid'>
+      <div id='background' className='container-fluid-sm'>
         <div className='text-center titulos'>
-          <h1>Lista de tareas</h1>
+          <h1><i className='bx bx-task bx-tada-hover bx-lg'/> Lista de tareas</h1>
           <br />
         </div>
 
-        <div className='container'>
+        <div id='tareas' className='container-md'>
           <div className='row mt-3'>
             <div className='col-3'>
               <input ref={input} type='text' placeholder='Nueva tarea' className='form-control' />
@@ -93,6 +97,6 @@ export default function ToDo() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

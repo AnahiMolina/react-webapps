@@ -97,7 +97,7 @@ export default function Contrasenias() {
             <Navbar />
             <div id='background' className='container-fluid'>
                 <div className='text-center titulos'>
-                    <h1>Contraseñas</h1>
+                    <h1><i className='bx bx bx-shield bx-tada-hover bx-lg'/> Contraseñas</h1>
                 </div>
                 <div id='contrasenia' className='container'>
                     <div className='row'>

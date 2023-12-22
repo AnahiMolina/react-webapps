@@ -42,8 +42,7 @@ export default function Calculadora() {
             <div id='background' className='container-fluid'>
 
                 <div className='text-center titulos'>
-                    <h1>Calculadora</h1>
-                    <i className='bx bx-math bx-tada-hover bx-lg'></i>
+                    <h1><i className='bx bx-calculator bx-tada-hover bx-lg' /> Calculadora</h1>
                 </div>
 
                 <div id='calculadora' className="container">
@@ -57,14 +56,14 @@ export default function Calculadora() {
                                 <button onClick={() => agregarNumero(7)} className="btn numero">7</button>
                                 <button onClick={() => agregarNumero(8)} className="btn numero">8</button>
                                 <button onClick={() => agregarNumero(9)} className="btn numero">9</button>
-                                <button onClick={() => agregarOperador('*')} className="btn operacion">*</button>
+                                <button onClick={() => agregarOperador('/')} className="btn operacion">/</button>
                             </div>
 
                             <div className='col-12'>
                                 <button onClick={() => agregarNumero(4)} className="btn numero">4</button>
                                 <button onClick={() => agregarNumero(5)} className="btn numero">5</button>
                                 <button onClick={() => agregarNumero(6)} className="btn numero">6</button>
-                                <button onClick={() => agregarNumero('+')} className="btn operacion">+</button>
+                                <button onClick={() => agregarOperador('*')} className="btn operacion">*</button>
                             </div>
 
                             <div className='col-12'>
@@ -74,11 +73,11 @@ export default function Calculadora() {
                                 <button onClick={() => agregarNumero('-')} className="btn operacion">-</button>
                             </div>
 
-                            <div className='col-12'>
+                            <div className='col-12 mb-2'>
                                 <button onClick={() => agregarNumero(0)} className="btn numero">0</button>
                                 <button onClick={() => limpiar()} className="btn operacion">C</button>
                                 <button onClick={() => calcular()} className="btn operacion">=</button>
-                                <button onClick={() => agregarOperador('/')} className="btn operacion">/</button>
+                                <button onClick={() => agregarNumero('+')} className="btn operacion">+</button>
                             </div>
                         </div>
                     </div>

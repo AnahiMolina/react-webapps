@@ -33,11 +33,11 @@ export default function Navbar() {
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/tareas">
-                            <i className='bx bx-clipboard bx-tada-hover' />Tareas</Link>
+                            <i className='bx bx-task bx-tada-hover' />Tareas</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/contrasenias">
-                            <i className='bx bx-dialpad-alt bx-tada-hover' />Contraseñas</Link>
+                            <i className='bx bx bx-shield bx-tada-hover' />Contraseñas</Link>
                     </li>
                 </ul>
             </div>

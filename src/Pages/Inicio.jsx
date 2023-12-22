@@ -1,17 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import NavbarRigth from '../components/NavbarRigth'
 
 export default function Inicio() {
     return (
         <>
-            <Navbar />
-            <div id='background' className='container-fluid'>
-                <div className='text-center titulos'>
-                    <h1>WebApps</h1>
-                    <i className='bx bxs-heart bx-burst-hover bx-lg'></i>
-                </div>
-                <div id='inicio' className='container'>
+            <NavbarRigth />
+            <div id='background' className='container-fluid-sm'>
+                <div id='inicio' className='container-sm'>
+                    <div className='text-center titulos mt-5'>
+                        <h1>WebApps</h1>
+                        <i className='bx bxs-heart bx-burst-hover bx-lg'></i>
+                    </div>
                     <div className="row">
                         <div className="col-3">
                             <div className="card">

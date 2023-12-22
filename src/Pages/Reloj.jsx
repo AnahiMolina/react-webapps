@@ -23,8 +23,7 @@ export default function Reloj() {
       <Navbar />
       <div id='background' className='container-fluid'>
         <div className='text-center titulos'>
-          <h1>Reloj</h1>
-          <i className='bx bx-time-five bx-spin-hover bx-lg'></i>
+          <h1><i className='bx bx-time-five bx-spin-hover bx-lg'/> Reloj</h1>
         </div>
 
         <div id='timer' className='container-fluid'>
