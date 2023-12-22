@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import NavbarRigth from '../components/NavbarRigth'
+import Prueba from '../components/Prueba'
 
 export default function Inicio() {
     return (

@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 export default function Prueba() {
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-dark stiky-top">
             <div className="container-fluid">
-                <a className="navbar-brand">
-                    <Link className="nav-link" to="/">
-                        <i className='bx bxs-plane-alt bx-tada-hover' /> WebApps
-                    </Link>
-                </a>
+                <Link className="nav-link navbar-brand" to="/">
+                    <i className='bx bxs-plane-alt bx-tada-hover' /> WebApps
+                </Link>
+
                 <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

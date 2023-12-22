@@ -6,11 +6,11 @@ export default function NavbarRigth() {
     return (
         <nav className="navbar navbar-dark bg-dark fixed-top">
             <div className="container-fluid">
-                <a className="navbar-brand">
-                    <Link className="nav-link" to="/">
-                        <i className='bx bxs-plane-alt bx-tada-hover' /> WebApps
-                    </Link>
-                </a>
+
+                <Link className="nav-link navbar-brand" to="/">
+                    <i className='bx bxs-plane-alt bx-tada-hover' /> WebApps
+                </Link>
+
                 <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
