@@ -50,7 +50,7 @@ export default function ToDo() {
         <div id='tareas' className='container-md'>
           <div className='row mt-3'>
             <div className='col-3'>
-              <input ref={input} type='text' placeholder='Nueva tarea' className='form-control' />
+              <textarea id='tarea_nueva' placeholder='Nueva tarea...' ref={input} rows={3} className='form-control' />
               <button onClick={agregar_tarea} className='btn btn-secondary w-100 mt-3 operacion'>
                 <i className='bx bx-plus' /> Agregar
               </button>

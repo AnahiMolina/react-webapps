@@ -1,17 +1,25 @@
 .titulos {
-    text-shadow: 0px 0px 5px #02ffd5;
+    color: #212529;
+    text-shadow: 0px 0px 8px #ff9933;
     padding: 1%;
 }
 
+/*https://slidebazaar.com/wp-content/uploads/2022/05/powerpoint-white-background-slide-SB02298.jpg*/
+
 #background {
-    background-image: url(https://slidebazaar.com/wp-content/uploads/2022/05/powerpoint-white-background-slide-SB02298.jpg);
+    background-image: url(https://images.saymedia-content.com/.image/t_share/MTkzODAzNTgyODUxMDY1MzI4/cool-css-backgrounds.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 92vh;
+    height: 100vh;
 }
 
+
 /*Navbar*/
+.navbar {
+    box-shadow: 0 1px 5px #ff9933;
+}
+
 .nav-link {
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -21,7 +29,7 @@
     color: #02ffd5;
 }
 
-#navbar_menu .a{
+#navbar_menu .a {
     background-color: #212529;
 }
 
@@ -30,24 +38,26 @@
     width: 100%;
     height: 100px;
     background-color: #212529;
+    border-radius: 20px;
 }
 
 /*#backInicio h1{
     color: rgb(0, 0, 0)9, 143);
 }*/
 #backInicio .row {
-    margin-bottom: 30px;
-    margin-top: 30px;
+    margin-bottom: 30%;
+    margin-top: 30%;
 }
 
-.card>* {
+#inicio .card>* {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    box-shadow: 0 0 4px #ff9933;
+    border-radius: 20px;
 }
 
-a {
+#inicio a {
     text-decoration: none;
     color: #02ffd5;
 }
@@ -60,7 +70,7 @@ a {
 }
 
 /*Colores*/
-#colores{
+#colores {
     width: 100%;
     padding: 0%;
 
@@ -74,9 +84,11 @@ a {
 }
 
 /*Caracteres*/
-#Palabras textarea {
+#palabras{
     padding: 15px;
     border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.664);
+    color: aliceblue;
 }
 
 /*Reloj*/
@@ -90,8 +102,8 @@ a {
 #tiempo {
     font-family: 'TimeTraveler';
     font-size: 18vh;
-    color: #002525;
-    text-shadow: 0px 0px 13px #b8ffe1;
+    color: #212529;
+    text-shadow: 0px 0px 13px #02ffd5;
 }
 
 #timer {
@@ -104,16 +116,15 @@ a {
 
 /*Calculadora*/
 #calculadora {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    width: 30%;
     height: 65vh;
 }
 
-#calculadora .row {
+#calculadora .card {
     background-color: rgba(0, 0, 0, 0.664);
     border-radius: 8px;
     box-shadow: 0px 0px 0px #b1fff2;
+    padding-left: 3vh;
+    padding-right: 3vh;
 }
 
 #ingreso {
@@ -133,9 +144,10 @@ a {
     color: #212529;
 }
 
-.operacion:hover{
+.operacion:hover {
     background-color: #808080;
     color: #02ffd5;
+    box-shadow: 0 0 6px #ff9933;
 }
 
 .numero {
@@ -145,20 +157,19 @@ a {
 
 .numero:hover {
     background-color: #808080;
+    box-shadow: 0 0 6px #ff9933;
 }
 
 
 /*clima*/
 #clima {
-    margin-top: 30px;
     margin-bottom: 30px;
-    width: 40%;
-    height: 65vh;
 }
 
 #clima .card {
-    height: 50vh;
-    padding: 20px;
+    text-align: center;
+    height: 56vh;
+    padding: 7%;
     background-color: rgba(0, 0, 0, 0.664);
     color: aliceblue;
 }
@@ -192,7 +203,7 @@ a {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    border-bottom: 1px solid #ffffff2d;
+    border-bottom: 1px solid #ffffff1b;
 
 }
 
@@ -228,16 +239,24 @@ a {
     transform: translateX(0%);
 }
 
-#icono{
+#icono {
     font-size: 50px;
     color: #ff9933;
 }
+
 /*Tareas*/
-#tareas{
+#tareas {
     margin-top: 30px;
     margin-bottom: 30px;
     width: 100%;
     height: 65vh;
+}
+
+#tarea_nueva{
+    padding: 15px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.664);
+    color: aliceblue;
 }
 
 /*Contrasenias*/
@@ -248,7 +267,7 @@ a {
     height: 65vh;
 }
 
-.fondoClaro{
+.fondoClaro {
     height: 50vh;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.664);

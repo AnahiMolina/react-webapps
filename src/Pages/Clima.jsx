@@ -9,7 +9,7 @@ export default function Clima() {
   const [tmax, setTmax] = useState('');
   const [tmin, setTmin] = useState('');
   const [icono, setIcono] = useState('');
-
+/*
   useEffect(() => {
     fetch('https://weather-api99.p.rapidapi.com/weather?city=teziutlan', {
       method: 'GET',
@@ -56,7 +56,7 @@ export default function Clima() {
     .catch(error => {
       console.error('Error:', error);
     });
-  }, []);
+  }, []);*/
 
   //GradosCelcius= ({dato} - 273.15)
 
@@ -69,8 +69,8 @@ export default function Clima() {
         </div>
 
         <div id='clima' className='container-md'>
-          <div className='row'>
-            <div className='col-12'>
+          <div className='row justify-content-center'>
+            <div className='col-sm-7 p-5'>
               <div className="card">
                 <center>
                   <form className='form'>
@@ -83,12 +83,13 @@ export default function Clima() {
                     </label>
                   </form>
                 </center>
-                <h1 className='mt-3'>{dato}</h1>
-                <p id='grados'>{temp}</p>
-                <h5>{desc}</h5>
+                <h1 className='mt-3'>{dato} Teziutlan</h1>{/*Borrar*/}
+                <p id='grados'>{temp}15 C</p>{/*Borrar*/}
+                <h5>{desc}ligth rain</h5>{/*Borrar*/}
                 <i id='icono' className={icono}></i>
+                <i className='bx bx-sun bx-lg'></i>{/*Borrar*/}
                 <hr></hr>
-                <p>Temperatura Máxima: {tmax}</p>
+                <p>Temperatura Máxima: {tmax} 18 C</p>{/*Borrar*/}
 
                 {/*<p>Temperatura Minima: {tmin}</p>*/}
               </div>

@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 //'e.target.value' valor del input
 
 export default function Colores() {
-  const [color, setColor] = useState('#f1f2f3')
+  const [color, setColor] = useState('#5b00ff')
 
   const CambiarColor = (e) => {
     setColor(e.target.value)

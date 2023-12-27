@@ -53,19 +53,25 @@ export default function Prueba() {
                         </li>
                     </ul>
                 </div>
-                <div className="offcanvas offcanvas-end text-bg-dark" tabIndex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-                    <div className="offcanvas-header">
-                        <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">WebApps Menú</h5>
-                        <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        <div className="offcanvas-body">
-                            <p>Aplicaciones</p>
-                            <p>Aplicaciones</p>
-                            <p>Aplicaciones</p>
-                            <p>Aplicaciones</p>
-                        </div>
-                    </div>
+            </div>
+            <div className="offcanvas offcanvas-end text-bg-dark" tabIndex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div className="offcanvas-header">
+                    <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">WebApps Menú</h5>
+                    <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div className="offcanvas-body">
+                    <p>Aplicaciones</p>
+                    <ul className="navbar-nav justify-content-end flex-grow-1 pe-3 mt-3 mb'3">
+                        <ul>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/colores">
+                                    <i className='bx bx-palette bx-tada-hover' /> Colores</Link>
+                            </li>
+                        </ul>
+                    </ul>
                 </div>
             </div>
         </nav>
     );
+
 }

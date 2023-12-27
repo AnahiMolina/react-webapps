@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function NavbarRigth() {
     return (
-        <nav className="navbar navbar-dark bg-dark fixed-top">
+        <nav className="navbar navbar-dark bg-dark">
             <div className="container-fluid">
 
                 <Link className="nav-link navbar-brand" to="/">
@@ -23,10 +23,6 @@ export default function NavbarRigth() {
                         <p>Aplicaciones</p>
                         <ul className="navbar-nav justify-content-end flex-grow-1 pe-3 mt-3 mb'3">
                             <ul>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/">
-                                        <i className='bx bx-home-alt-2 bx-tada-hover' /> Inicio</Link>
-                                </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/colores">
                                         <i className='bx bx-palette bx-tada-hover' /> Colores</Link>
@@ -57,9 +53,7 @@ export default function NavbarRigth() {
                                 </li>
                             </ul>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Pruebas
-                                </a>
+                                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pruebas</a>
                                 <ul className="dropdown-menu dropdown-menu-dark">
                                     <li><Link className="dropdown-item" to="/storage">Storage</Link></li>
                                     <li><Link className="dropdown-item" to="/referencias">Referencias</Link></li>

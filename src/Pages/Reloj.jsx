@@ -27,13 +27,14 @@ export default function Reloj() {
         </div>
 
         <div id='timer' className='container-fluid'>
+    
           <div className='row'>
             <div className='col-12'>
               <div id='tiempo'>
                 <div className='text-center' id='reloj' />
               </div>
               <div className='text-center'>
-                <h1 id='fecha' />
+                <h1 style={{color:'white'}} id='fecha' />
               </div>
             </div>
           </div>

@@ -29,11 +29,11 @@ export default function Caracteres() {
 
         <div className='container'>
           <div className='text-center'>
-            <textarea id='Palabras' className='form-control' rows="8" value={inputText} onChange={cambiante} />
+            <textarea id='palabras' className='form-control' rows="8" value={inputText} onChange={cambiante} />
           </div>
           <div className='text-center'>
             <br />
-            <h3>Palabras: {palabra} | Caracteres: {char}</h3>
+            <h3 style={{color: 'white'}}>Palabras: {palabra} | Caracteres: {char}</h3>
           </div>
         </div>
       </div>

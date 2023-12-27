@@ -6,11 +6,11 @@ import Prueba from '../components/Prueba'
 
 export default function Inicio() {
     return (
-        <>
+        <div id='background'>
             <NavbarRigth />
-            <div id='background' className='container-fluid-sm'>
+            <div className='container-fluid-sm'>
                 <div id='inicio' className='container-sm'>
-                    <div className='text-center titulos mt-5'>
+                    <div className='text-center titulos'>
                         <h1>WebApps</h1>
                         <i className='bx bxs-heart bx-burst-hover bx-lg'></i>
                     </div>
@@ -62,6 +62,6 @@ export default function Inicio() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
