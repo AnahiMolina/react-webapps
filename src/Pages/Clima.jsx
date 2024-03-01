@@ -9,7 +9,7 @@ export default function Clima() {
   const [tmax, setTmax] = useState('');
   const [tmin, setTmin] = useState('');
   const [icono, setIcono] = useState('');
-/*
+
   useEffect(() => {
     fetch('https://weather-api99.p.rapidapi.com/weather?city=teziutlan', {
       method: 'GET',
@@ -18,80 +18,84 @@ export default function Clima() {
         'X-RapidAPI-Host': 'weather-api99.p.rapidapi.com'
       }
     })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('No se pudo obtener los datos de la API');
-      }
-      return response.json();
-    })
-    .then(data => {
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('No se pudo obtener los datos de la API');
+        }
+        return response.json();
+      })
+      .then(data => {
 
-      setDato(data.name);
-      setDesc(data.weather[0].description);
-      setTemp(`${Math.ceil(data.main.feels_like - 273.15)} °C`);
-      setTmax(`${Math.round(data.main.temp_max - 273.15)} °C`);
-      setTmin(`${Math.round(data.main.temp_min - 273.15)} °C`);
+        setDato(data.name);
+        setDesc(data.weather[0].description);
+        setTemp(`${Math.ceil(data.main.feels_like - 273.15)} °C`);
+        setTmax(`${Math.round(data.main.temp_max - 273.15)} °C`);
+        setTmin(`${Math.round(data.main.temp_min - 273.15)} °C`);
 
-      
-      let icono = '';
-      switch (data.weather[0].description) {
-        case 'light rain':
-          icono = 'bx bx-cloud-light-rain';
-          break;
-        case 'scattered clouds':
-          icono = 'bx bxl-soundcloud'
-          break;
-        case 'overcast clouds':
-          icono = 'bx bxs-cloud';
-          break
-        case 'broken clouds':
-          icono = 'fa-solid fa-cloud-sun'
-          break
-        default:
-          icono = 'bx bx-question-mark';
-          break;
-      }
-      setIcono(icono);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-  }, []);*/
+
+        let icono = '';
+        switch (data.weather[0].description) {
+          case 'light rain':
+            icono = 'bx bx-cloud-light-rain';
+            break;
+          case 'scattered clouds':
+            icono = 'bx bxl-soundcloud'
+            break;
+          case 'overcast clouds':
+            icono = 'bx bxs-cloud';
+            break
+          case 'broken clouds':
+            icono = 'fa-solid fa-cloud-sun'
+            break
+          case 'clear skyligth rain':
+            icono = 'fa-solid fa-sun'
+            break
+          case 'clear sky':
+            icono = 'fa-regular fa-sun'
+          default:
+            icono = 'bx bx-question-mark';
+            break;
+        }
+        setIcono(icono);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }, []);
 
   //GradosCelcius= ({dato} - 273.15)
 
   return (
     <>
-      <Navbar />
-      <div id='background' className='container-fluid-sm'>
-        <div className='text-center titulos'>
-          <h1><i className='bx bx-sun bx-flashing-hover bx-lg'/> Clima</h1>
-        </div>
+      <div id='background'>
+        <Navbar />
+        <div className='container-fluid-sm'>
+          <div className='text-center titulos'>
+            <h1><i className='bx bx-sun bx-flashing-hover bx-lg' /> Clima</h1>
+          </div>
 
-        <div id='clima' className='container-md'>
-          <div className='row justify-content-center'>
-            <div className='col-sm-7 p-5'>
-              <div className="card">
-                <center>
-                  <form className='form'>
-                    <input type='text' required />
-                    <label className='lbl-nombre'>
-                      <span className='text-nomb'>
-                      <i className='bx bx-search-alt'/>
-                        Buscar Ciudad...
-                      </span>
-                    </label>
-                  </form>
-                </center>
-                <h1 className='mt-3'>{dato} Teziutlan</h1>{/*Borrar*/}
-                <p id='grados'>{temp}15 C</p>{/*Borrar*/}
-                <h5>{desc}ligth rain</h5>{/*Borrar*/}
-                <i id='icono' className={icono}></i>
-                <i className='bx bx-sun bx-lg'></i>{/*Borrar*/}
-                <hr></hr>
-                <p>Temperatura Máxima: {tmax} 18 C</p>{/*Borrar*/}
-
-                {/*<p>Temperatura Minima: {tmin}</p>*/}
+          <div id='clima' className='container-md'>
+            <div className='row justify-content-center'>
+              <div className='col-sm-7 p-5'>
+                <div className="card">
+                  <center>
+                    <form className='form'>
+                      <input type='text' required />
+                      <label className='lbl-nombre'>
+                        <span className='text-nomb'>
+                          <i className='bx bx-search-alt' />
+                          Buscar Ciudad...
+                        </span>
+                      </label>
+                    </form>
+                  </center>
+                  <h1 className='mt-3'>{dato} </h1>
+                  <p id='grados'>{temp}</p>
+                  <h5>{desc}</h5>
+                  <i id='icono' className={icono}></i>
+                  <hr></hr>
+                  <p>Temperatura Máxima: {tmax}</p>
+                </div>
               </div>
             </div>
           </div>

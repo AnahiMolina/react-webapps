@@ -1,54 +1,50 @@
 .titulos {
     color: #212529;
-    text-shadow: 0px 0px 8px #ff9933;
+    text-shadow: 0px 0px 14px #02ffd5;
     padding: 1%;
 }
 
-/*https://slidebazaar.com/wp-content/uploads/2022/05/powerpoint-white-background-slide-SB02298.jpg*/
+.degradado {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(45deg,#961096, #7b1fa2,#a325d9, #02ffd5); 
+  }  
 
+/*https://slidebazaar.com/wp-content/uploads/2022/05/powerpoint-white-background-slide-SB02298.jpg*/
+/*https://images.saymedia-content.com/.image/t_share/MTkzODAzNTgyODUxMDY1MzI4/cool-css-backgrounds.jpg*/
 #background {
-    background-image: url(https://images.saymedia-content.com/.image/t_share/MTkzODAzNTgyODUxMDY1MzI4/cool-css-backgrounds.jpg);
+    background-image: url("../img/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     height: 100vh;
 }
 
-
-/*Navbar*/
 .navbar {
     box-shadow: 0 1px 5px #ff9933;
 }
-
 .nav-link {
     text-decoration: none;
     color: rgb(255, 255, 255);
 }
-
 .nav-link:hover {
     color: #02ffd5;
 }
-
 #navbar_menu .a {
     background-color: #212529;
 }
 
-/*Inicio*/
+
 #inicio .card {
     width: 100%;
     height: 100px;
     background-color: #212529;
     border-radius: 20px;
 }
-
-/*#backInicio h1{
-    color: rgb(0, 0, 0)9, 143);
-}*/
 #backInicio .row {
     margin-bottom: 30%;
     margin-top: 30%;
 }
-
 #inicio .card>* {
     display: flex;
     align-items: center;
@@ -56,12 +52,10 @@
     box-shadow: 0 0 4px #ff9933;
     border-radius: 20px;
 }
-
 #inicio a {
     text-decoration: none;
     color: #02ffd5;
 }
-
 #backInicio {
     margin-top: 40px;
     max-height: 100vh;
@@ -69,13 +63,11 @@
     width: 600vh
 }
 
-/*Colores*/
 #colores {
     width: 100%;
     padding: 0%;
 
 }
-
 .centro {
     height: 80vh;
     display: flex;
@@ -83,7 +75,6 @@
     justify-content: center;
 }
 
-/*Caracteres*/
 #palabras{
     padding: 15px;
     border-radius: 8px;
@@ -91,21 +82,18 @@
     color: aliceblue;
 }
 
-/*Reloj*/
 @font-face {
     font-family: 'TimeTraveler';
     font-style: normal;
     font-weight: 400;
     src: url('/TimeTravelerPal-Normal-Regular.ttf') format('truetype')
 }
-
 #tiempo {
     font-family: 'TimeTraveler';
     font-size: 18vh;
     color: #212529;
     text-shadow: 0px 0px 13px #02ffd5;
 }
-
 #timer {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -113,12 +101,9 @@
     height: 65vh;
 }
 
-
-/*Calculadora*/
 #calculadora {
     height: 65vh;
 }
-
 #calculadora .card {
     background-color: rgba(0, 0, 0, 0.664);
     border-radius: 8px;
@@ -126,46 +111,38 @@
     padding-left: 3vh;
     padding-right: 3vh;
 }
-
 #ingreso {
     margin-bottom: 20px;
     margin-top: 20px;
 }
-
 #teclado button {
     width: 23%;
     padding: 4%;
     margin: 1%;
     margin-bottom: 10px;
+    font-size: 16pt;
 }
-
 .operacion {
     background-color: #02ffd5;
     color: #212529;
 }
-
 .operacion:hover {
-    background-color: #808080;
+    background-color: #008871;
     color: #02ffd5;
     box-shadow: 0 0 6px #ff9933;
 }
-
 .numero {
     background-color: #212529;
     color: #02ffd5;
 }
-
 .numero:hover {
-    background-color: #808080;
+    background-color: #008871;
     box-shadow: 0 0 6px #ff9933;
 }
 
-
-/*clima*/
 #clima {
     margin-bottom: 30px;
 }
-
 #clima .card {
     text-align: center;
     height: 56vh;
@@ -173,11 +150,9 @@
     background-color: rgba(0, 0, 0, 0.664);
     color: aliceblue;
 }
-
 #grados {
     font-size: 265%;
 }
-
 #clima .form {
     width: 100%;
     height: 50px;
@@ -185,7 +160,6 @@
     position: relative;
     overflow: hidden;
 }
-
 #clima .form input {
     width: 100%;
     height: 100%;
@@ -195,7 +169,6 @@
     border: none;
     outline: 0px;
 }
-
 #clima .form .lbl-nombre {
     position: absolute;
     bottom: 0;
@@ -206,7 +179,6 @@
     border-bottom: 1px solid #ffffff1b;
 
 }
-
 #clima .form .lbl-nombre:after {
     content: '';
     position: absolute;
@@ -218,7 +190,6 @@
     transform: translateX(-100%);
     transition: all 0.3s ease;
 }
-
 #clima .text-nomb {
     position: absolute;
     bottom: 5px;
@@ -226,32 +197,27 @@
     transition: all 0.3s ease;
     color: #fff;
 }
-
 #clima .form input:focus+.lbl-nombre .text-nomb,
 .form input:valid+.lbl-nombre .text-nomb {
     transform: translateY(-100%);
     font-size: 14px;
     color: #02ffd5;
 }
-
 #clima .form input:focus+.lbl-nombre:after,
 .form input:valid+.lbl-nombre:after {
     transform: translateX(0%);
 }
-
 #icono {
     font-size: 50px;
-    color: #ff9933;
+    color: #02ffd5;
 }
 
-/*Tareas*/
 #tareas {
     margin-top: 30px;
     margin-bottom: 30px;
     width: 100%;
     height: 65vh;
 }
-
 #tarea_nueva{
     padding: 15px;
     border-radius: 8px;
@@ -259,7 +225,6 @@
     color: aliceblue;
 }
 
-/*Contrasenias*/
 #contrasenia {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -282,16 +247,13 @@
     font-size: 2rem;
 }
 
-.seguridadNula {
-    background-color: black;
-}
 
 .seguridadBaja {
-    background-color: red;
+    background-color: #310000;
 }
 
 .seguridadMedia {
-    background-color: yellow;
+    background-color: #ff9933;
 }
 
 .seguridadAlta {

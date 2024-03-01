@@ -20,20 +20,22 @@ export default function Caracteres() {
 
   return (
     <>
-      <Navbar />
-      <div id='background' className='container-fluid'>
-        <div className='text-center titulos'>
-          <h1><i className='bx bx-file-find bx-flashing-hover bx-lg'/> Contador de Caracteres</h1>
-          <br />
-        </div>
-
-        <div className='container'>
-          <div className='text-center'>
-            <textarea id='palabras' className='form-control' rows="8" value={inputText} onChange={cambiante} />
-          </div>
-          <div className='text-center'>
+      <div id='background'>
+        <Navbar />
+        <div className='container-fluid'>
+          <div className='text-center titulos'>
+            <h1><i className='bx bx-file-find bx-flashing-hover bx-lg' /> Contador de Caracteres</h1>
             <br />
-            <h3 style={{color: 'white'}}>Palabras: {palabra} | Caracteres: {char}</h3>
+          </div>
+
+          <div className='container'>
+            <div className='text-center'>
+              <textarea id='palabras' className='form-control' rows="8" value={inputText} onChange={cambiante} />
+            </div>
+            <div className='text-center'>
+              <br />
+              <h3 style={{ color: 'white' }}>Palabras: {palabra} | Caracteres: {char}</h3>
+            </div>
           </div>
         </div>
       </div>

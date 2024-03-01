@@ -1,21 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
-import NavbarRigth from '../components/NavbarRigth'
-import Prueba from '../components/Prueba'
 
 export default function Inicio() {
     return (
         <div id='background'>
-            <NavbarRigth />
+            <Navbar />
             <div className='container-fluid-sm'>
                 <div id='inicio' className='container-sm'>
                     <div className='text-center titulos'>
                         <h1>WebApps</h1>
-                        <i className='bx bxs-heart bx-burst-hover bx-lg'></i>
+                        <i className='bx bxl-react bx-spin-hover bx-lg'></i>
                     </div>
                     <div className="row">
-                        <div className="col-3">
+                        <div className="col-md-3 mb-5">
                             <div className="card">
                                 <div className="card-body c2">
                                     <Link to='/colores'>
@@ -26,7 +24,7 @@ export default function Inicio() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-3">
+                        <div className="col-md-3 mb-5">
                             <div className="card">
                                 <div className="card-body c2">
                                     <Link to='/caracteres'>
@@ -37,7 +35,7 @@ export default function Inicio() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-3">
+                        <div className="col-md-3 mb-5">
                             <div className="card">
                                 <div className="card-body c2">
                                     <Link to='/reloj'>
@@ -48,7 +46,7 @@ export default function Inicio() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-3">
+                        <div className="col-md-3 mb-5">
                             <div className="card">
                                 <div className="card-body c2">
                                     <Link to='/calculadora'>

@@ -11,12 +11,12 @@ import Calculadora from './Pages/Calculadora'
 import Contexto from './Pages/Contexto'
 import Storage from './Pages/Storage'
 import Clima from './Pages/Clima'
-import InfoClima from './Pages/InfoClima'
 import ToDo from './Pages/ToDo'
-import Contrasenias from './Pages/Contrasenias'
 import Navbar from './components/Navbar'
-import NavbarRigth from './components/NavbarRigth'
-
+import Prueba from './components/Prueba'
+import GenerarContr from './Pages/GenerarContr'
+import SeguridadContr from './Pages/SeguridadContr'
+import ApiClima from './Pages/ApiClima'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter basename='/react-webapps/'>
@@ -28,13 +28,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/calculadora' element={<Calculadora />}/>
       <Route path='/clima' element={<Clima />}/>
       <Route path='/tareas' element={<ToDo />}/>
-      <Route path='/contrasenias' element={<Contrasenias />}/>
+      <Route path='/generar' element={<GenerarContr />}/>
+      <Route path='/seguridad' element={<SeguridadContr />} />
       <Route path='/storage' element={<Storage />}/>
       <Route path='/referencias' element={<Referencias/>}/>
       <Route path='/contexto' element={<Contexto />}/>
-      <Route path='/infoclima' element={<InfoClima />}/>
-      <Route path='/prueba' element={<NavbarRigth />}/>
-      <Route path='/navbar1' element={<Navbar />}/>
+      <Route path='/apiclima' element={<ApiClima />}/>
+      <Route path='/prueba' element={<Prueba />} />
+      {/* <Route path='/navbar1' element={<Navbar />}/> */}
     </Routes>
   </BrowserRouter>,
 )

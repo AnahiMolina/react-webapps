@@ -3,13 +3,13 @@ import Navbar from '../components/Navbar'
 //'e.target.value' valor del input
 
 export default function Colores() {
-  const [color, setColor] = useState('#5b00ff')
+  const [color, setColor] = useState('#fff')
 
   const CambiarColor = (e) => {
     setColor(e.target.value)
   }
   return (
-    <>
+    <div className='contenedor-con-scroll '>
       <Navbar />
         <div id='colores' className='container-fluid'>
           <div style={{ backgroundColor: color }}>
@@ -22,7 +22,7 @@ export default function Colores() {
             </div>
           </div>
         </div>
-    </>
+    </div>
     /*<div id='colores' className='container-fluid'>
       <div style={{ backgroundColor: color }}>
         <PruebaNavbar />
