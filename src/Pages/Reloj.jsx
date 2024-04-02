@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Navbar from '../components/Navbar';
+import Contenedor from '../Layouts/Contenedor';
 
 export default function Reloj() {
   useEffect(() => {
@@ -20,28 +20,18 @@ export default function Reloj() {
 
   return (
     <>
-      <div id='background'>
-        <Navbar />
-        <div className='container-fluid'>
-          <div className='text-center titulos'>
-            <h1><i className='bx bx-time-five bx-spin-hover bx-lg' /> Reloj</h1>
-          </div>
-
-          <div id='timer' className='container-fluid'>
-
-            <div className='row'>
-              <div className='col-12'>
-                <div id='tiempo'>
-                  <div className='text-center' id='reloj' />
-                </div>
-                <div className='text-center'>
-                  <h1 style={{ color: 'white' }} id='fecha' />
-                </div>
+      <Contenedor titulo='Reloj' icono='bx bx-time-five bx-spin-hover bx-lg' clase='timer'>
+          <div className='row'>
+            <div className='col-12'>
+              <div id='tiempo'>
+                <div className='text-center' id='reloj' />
+              </div>
+              <div className='text-center'>
+                <h1 id='fecha' />
               </div>
             </div>
           </div>
-        </div>
-      </div>
+      </Contenedor>
     </>
   );
 }

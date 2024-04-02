@@ -34,7 +34,7 @@ export default function Clima() {
 
 
         let icono = '';
-        switch (data.weather[0].description) {
+        switch (desc) {
           case 'light rain':
             icono = 'bx bx-cloud-light-rain';
             break;

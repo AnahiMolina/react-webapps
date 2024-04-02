@@ -1,154 +1,168 @@
-import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
+import React, { useState, useRef } from 'react';
+import Alerta from '../components/Alerta';
+import Contenedor from '../Layouts/Contenedor';
 
 export default function GenerarContr() {
-    const letras = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz';
-    const simbolos = '!@#$%^&*()_+~`}{[]:;?><,./-=';
-    const numeros = '0123456789';
+  const letras = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz';
+  const simbolos = '!@#$%&*()_+~}{[];?><,./-=';
+  const numeros = '0123456789';
 
-    const [contrasenia, setContrasenia] = useState('');
-    const [longitud, setLongitud] = useState(10);
-    const [incluyeLetras, setIncluyeLetras] = useState(true);
-    const [incluyeNumeros, setIncluyeNumeros] = useState(true);
-    const [incluyeSimbolos, setIncluyeSimbolos] = useState(true);
-    const [textoSeguridad, setTextoSeguridad] = useState('')
+  const [contrasenia, setContrasenia] = useState('');
+  const [longitud, setLongitud] = useState(8);
+  const [incluyeLetras, setIncluyeLetras] = useState(true);
+  const [incluyeNumeros, setIncluyeNumeros] = useState(true);
+  const [incluyeSimbolos, setIncluyeSimbolos] = useState(true);
+  const [textoSeguridad, setTextoSeguridad] = useState('')
 
+  const alertaRef = useRef(null);
+  const handleClick = () => {
+    alertaRef.current.mostrarAlerta();
+  };
 
-    let alta = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{10,})')
-    let media = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
-    let baja = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$')
+  function crear(longitud) {
+    let caracteres = '';
+    let nuevaContrasenia = '';
 
-    function calcularFortaleza(contraseña) {
-        let seguridad = 0;
+    if (incluyeLetras) caracteres += letras;
+    if (incluyeNumeros) caracteres += numeros;
+    if (incluyeSimbolos) caracteres += simbolos;
 
-        if (alta.test(contraseña)) {
-            seguridad = 100;
-        } else if (media.test(contraseña)) {
-            seguridad = 50;
-        } else if (baja.test(contraseña)) {
-            seguridad = 25
-        } else {
-            seguridad = 5
-        }
-        return seguridad;
+    if (caracteres !== '') {
+      for (let i = 0; i < longitud; i++) {
+        const caracterAleatorio = caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+        nuevaContrasenia += caracterAleatorio;
+      }
+      const seguridad = calcularSeguridad(nuevaContrasenia);
+      actualizarBarra(seguridad);
+      setContrasenia(nuevaContrasenia);
+    } else {
+      return (
+        alert('Selecciona un tipo de caracter'))
     }
 
-    function actualizarBarra(seguridad) {
-        const progressBar = document.getElementById('seguridad');
-        let barraClass = '';
-        let texto = '';
+  }
 
-        if (seguridad == 100) {
-            barraClass = 'seguridadAlta';
-            texto = 'Seguridad Alta'
-        } else if (seguridad == 50) {
-            barraClass = 'seguridadMedia';
-            texto = 'Seguridad Media'
-        } else if (seguridad == 50) {
-            barraClass = 'seguridadBaja';
-            texto = 'Seguridad Baja'
-        } else {
-            barraClass = ''
-            texto = 'Seguridad muy Baja'
-        }
+  function calcularSeguridad(contrasena) {
+    let seguridad = 0
 
-        setTextoSeguridad(texto)
-
-        progressBar.className = `progress-bar ${barraClass}`;
-        progressBar.style.width = `${seguridad}%`;
-        progressBar.setAttribute('aria-valuenow', seguridad);
+    if (contrasena.length >= 8) {
+      seguridad = seguridad + 2
+    } else {
+      seguridad = seguridad + 1
     }
 
-    function crear(longitud) {
-        let caracteres = '';
-        let nuevaContrasenia = '';
+    if (/(?=.*[a-z])/.test(contrasena)) {
+      seguridad = seguridad + 1
+    }
+    if (/\d/.test(contrasena)) {
+      seguridad = seguridad + 1
+    }
+    if (/^(?=(?:.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?¡¿¨´~`Ññ]){1,})(?=.*\d).*$/.test(contrasena)) {
+      seguridad = seguridad + 2
+    }
+    if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?¡¿¨´~`Ññ]/.test(contrasena)) {
+      seguridad = seguridad + 2
+    }
+    if (/^(?=.*[a-z])(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?¡¿¨´~`Ññ]).+$/.test(contrasena)) {
+      seguridad = seguridad + 3
+    }
+    if (/^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?¡¿¨´~`Ññ]).*$/.test(contrasena)) {
+      seguridad = seguridad + 3
+    }
+    if (/(?=.*[a-z])(?=.*[A-Z])/.test(contrasena)) {
+      seguridad = seguridad + 4
+    }
+    if (/^(?=.*[a-zA-Z])(?=.*\d).+$/.test(contrasena)) {
+      seguridad = seguridad + 4
+    }
+    if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?¡¿¨´~`Ññ]).+$/.test(contrasena)) {
+      seguridad = seguridad + 5
+    }
+    if (/^[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?¡¿¨´~`Ññ]+$/.test(contrasena)) {
+      seguridad = seguridad + 16
+    }
+    return seguridad;
+  }
 
-        if (incluyeLetras) caracteres += letras;
-        if (incluyeNumeros) caracteres += numeros;
-        if (incluyeSimbolos) caracteres += simbolos;
+  function actualizarBarra(seguridad) {
+    const progressBar = document.getElementById('seguridad');
+    let barra = '';
+    let texto = '';
+    let porcentaje = 0;
 
-        if (caracteres !== '') {
-            //Crea la contraseña
-            for (let i = 0; i < longitud; i++) {
-                const caracterAleatorio = caracteres.charAt(Math.floor(Math.random() * caracteres.length));
-                nuevaContrasenia += caracterAleatorio;
-            }
-            //Calcular la seguridad
-            const fortaleza = calcularFortaleza(nuevaContrasenia);
-            actualizarBarra(fortaleza);
-            setContrasenia(nuevaContrasenia);
-        } else {
-            //Mensaje cuando no se escoge un tipo de caracter
-            return (
-                alert('Selecciona un tipo de caracter'))
-        }
-
+    if (seguridad >= 20) {
+      barra = 'seguridadAlta'
+      texto = 'Seguridad alta'
+      porcentaje = 100
+    } else if (seguridad >= 7 && seguridad < 20) {
+      barra = 'seguridadMedia'
+      texto = 'Seguridad media'
+      porcentaje = 70
+    } else if (seguridad > 0 && seguridad < 7) {
+      barra = 'seguridadBaja'
+      texto = 'Seguridad baja'
+      porcentaje = 30
+    } else {
+      barra = 'seguridadBaja2'
+      texto = 'Seguridad muy baja'
+      porcentaje = 10
     }
 
-    function copiar() {
-        navigator.clipboard.writeText(contrasenia)
-            .then(() => alert('Contraseña copiada al portapapeles'))
-            .catch(() => alert('No se pudo copiar la contraseña.'));
-    }
+    setTextoSeguridad(texto)
 
+    progressBar.className = `progress-bar ${barra}`;
+    progressBar.style.width = `${porcentaje}%`;
+    progressBar.setAttribute('aria-valuenow', porcentaje);
+  }
 
-    return (
-        <>
-            <div id='background' >
-                <Navbar />
-                <div className='container-fluid-sm'>
-                    <div className='text-center titulos'>
-                        <h1><i className='bx bx bx-shield bx-tada-hover bx-lg' /> Contraseñas</h1>
+  function copiar() {
+    navigator.clipboard.writeText(contrasenia)
+  }
+
+  return (
+    <>
+      <Contenedor titulo='Contraseñas' icono='bx bx bx-shield bx-tada-hover bx-lg' clase='contrasenia'>
+          <div className='row'>
+            <div className='col-4'>
+              <div className='card'>
+                <ul className="list-group list-group-flush">
+                  <li className="list-group-item mt-2">
+                    <h6>Longitud:</h6>
+                    <input type='number' className='input form-control' placeholder='Escribe la longitud...' value={longitud} onChange={(e) => setLongitud(parseInt(e.target.value))} />
+                  </li>
+                  <li className="list-group-item mt-2 center">
+                    <h6>Caracteres: </h6>
+                    <div className="form-check form-switch">
+                      <input className="form-check-input" type="checkbox" id="letras" checked={incluyeLetras} onChange={() => setIncluyeLetras(!incluyeLetras)} />
+                      <label className="form-check-label" htmlFor="letras">Letras</label>
                     </div>
-                    <div id='contrasenia' className='container-md'>
-                        <div className='row'>
-                            <div className='col-4'>
-                                <div className='card'>
-                                    
-                                        <ul className="list-group list-group-flush">
-
-                                            <li className="list-group-item mt-2">
-                                                <h6>Longitud:</h6>
-                                                <input type='number' className='input form-control' placeholder='Escribe la longitud...' value={longitud} onChange={(e) => setLongitud(parseInt(e.target.value))} />
-                                            </li>
-
-                                            <li className="list-group-item mt-2 center">
-                                                <h6>Caracteres: </h6>
-                                                <div className="form-check form-switch">
-                                                    <input className="form-check-input" type="checkbox" id="letras" checked={incluyeLetras} onChange={() => setIncluyeLetras(!incluyeLetras)} />
-                                                    <label className="form-check-label" htmlFor="letras">Letras</label>
-                                                </div>
-                                                <div className="form-check form-switch">
-                                                    <input className="form-check-input" type="checkbox" id="numeros" checked={incluyeNumeros} onChange={() => setIncluyeNumeros(!incluyeNumeros)} />
-                                                    <label className="form-check-label" htmlFor="numeros">Números</label>
-                                                </div>
-                                                <div className="form-check form-switch">
-                                                    <input className="form-check-input" type="checkbox" id="simbolos" checked={incluyeSimbolos} onChange={() => setIncluyeSimbolos(!incluyeSimbolos)} />
-                                                    <label className="form-check-label" htmlFor="simbolos">Símbolos</label>
-                                                </div>
-                                            </li>
-
-                                            <li className="list-group-item">
-                                                <button onClick={() => crear(longitud)} className="btn btn-primary PasBoton w-100 mt-3">Generar</button>
-                                                <button onClick={copiar} className="btn btn-primary PasBoton w-100 mt-3">Copiar</button><br />
-                                            </li>
-
-                                        </ul>
-                                   
-                                </div>
-                            </div>
-                            <div className='col-8'>
-                                <input type="text" className="input form-control PasMostrar" value={contrasenia} readOnly/>
-                                {/*Barra de progreso*/}
-                                <div className="progress mt-1" role="progressbar" aria-label="Seguridad" aria-valuemin="0" aria-valuemax="100">
-                                    <div className="progress-bar" id="seguridad"></div>
-                                </div>
-                                <h3>{textoSeguridad}</h3>
-                            </div>
-                        </div>
+                    <div className="form-check form-switch">
+                      <input className="form-check-input" type="checkbox" id="numeros" checked={incluyeNumeros} onChange={() => setIncluyeNumeros(!incluyeNumeros)} />
+                      <label className="form-check-label" htmlFor="numeros">Números</label>
                     </div>
-                </div>
+                    <div className="form-check form-switch">
+                      <input className="form-check-input" type="checkbox" id="simbolos" checked={incluyeSimbolos} onChange={() => setIncluyeSimbolos(!incluyeSimbolos)} />
+                      <label className="form-check-label" htmlFor="simbolos">Símbolos</label>
+                    </div>
+                  </li>
+                  <li className="list-group-item">
+                    <button onClick={() => crear(longitud)} className="btn btn-primary PasBoton w-100 mt-3">Generar</button>
+                    <button onClick={() => { copiar(); handleClick(); }} className="btn btn-primary PasBoton w-100 mt-3">Copiar</button>
+                  </li>
+                </ul>
+              </div>
             </div>
-        </>
-    );
+            <div className='col-8'>
+              <input type="text" className="input form-control PasMostrar" value={contrasenia} readOnly />
+              <div className="progress mt-1" role="progressbar" aria-label="Seguridad" aria-valuemin="0" aria-valuemax="100">
+                <div className="progress-bar" id="seguridad"></div>
+              </div>
+              <br />
+              <h3>{textoSeguridad}</h3>
+              <Alerta estilo='info' mensaje='¡Contraseña copiada a Portapapeles ❤️!' ref={alertaRef} />
+            </div>
+          </div>
+      </Contenedor>
+    </>
+  );
 }

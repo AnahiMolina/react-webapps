@@ -1,65 +1,30 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import Navbar from '../components/Navbar'
+import Contenedor from '../Layouts/Contenedor'
+import Tarjetas from '../components/Tarjetas'
+import SeguridadContr from './SeguridadContr'
 
 export default function Inicio() {
-    return (
-        <div id='background'>
-            <Navbar />
-            <div className='container-fluid-sm'>
-                <div id='inicio' className='container-sm'>
-                    <div className='text-center titulos'>
-                        <h1>WebApps</h1>
-                        <i className='bx bxl-react bx-spin-hover bx-lg'></i>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-3 mb-5">
-                            <div className="card">
-                                <div className="card-body c2">
-                                    <Link to='/colores'>
-                                        <div className='center text-center'>
-                                            Colores
-                                        </div>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-3 mb-5">
-                            <div className="card">
-                                <div className="card-body c2">
-                                    <Link to='/caracteres'>
-                                        <div className='center'>
-                                            Caracteres
-                                        </div>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-3 mb-5">
-                            <div className="card">
-                                <div className="card-body c2">
-                                    <Link to='/reloj'>
-                                        <div className='center text-center'>
-                                            Reloj
-                                        </div>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-3 mb-5">
-                            <div className="card">
-                                <div className="card-body c2">
-                                    <Link to='/calculadora'>
-                                        <div className='center text-center'>
-                                            Calculadora
-                                        </div>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  return (
+    <>
+      <Contenedor titulo='WebApps' icono='bx bxl-react bx-spin-hover bx-lg' clase='inicio'>
+        <div className="row">
+          <div className="col-md-3 mb-5">
+            <Tarjetas link='/colores' nombre='Colores' />
+          </div>
+          <div className="col-md-3 mb-5">
+            <Tarjetas link='/caracteres' nombre='Caracteres' />
+          </div>
+          <div className="col-md-3 mb-5">
+            <Tarjetas link='/reloj' nombre='Reloj' />
+          </div>
+          <div className="col-md-3 mb-5">
+            <Tarjetas link='/calculadora' nombre='Calculadora' />
+          </div>
+          <div className="col-md-3 mb-5">
+            <Tarjetas link='tareas' nombre='Tareas' />
+          </div>
         </div>
-    )
+      </Contenedor>
+    </>
+  )
 }

@@ -1,11 +1,18 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
+import React, { useRef } from 'react';
+import Alerta from '../components/Alerta';
 
 export default function SeguridadContr() {
+  const alertaRef = useRef(null);
+
+  const handleClick = () => {
+    alertaRef.current.mostrarAlerta();
+  };
+
   return (
     <div>
-      <Navbar />
-      <h1>SeguridadContr</h1>
+      <h1>Hola</h1>
+      <button onClick={handleClick} className="btn btn-primary">Copiar</button>
+      <Alerta estilo='danger' mensaje='Voila' ref={alertaRef} />
     </div>
-  )
+  );
 }

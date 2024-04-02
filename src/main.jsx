@@ -5,6 +5,8 @@ import Colores from './Pages/Colores'
 import Caracteres from './Pages/Caracteres'
 import Inicio from './Pages/Inicio'
 import './assets/css/index.css'
+import './assets/css/clima.css'
+import './assets/css/prueba.css'
 import Referencias from './Pages/Referencias'
 import Reloj from './Pages/Reloj'
 import Calculadora from './Pages/Calculadora'
@@ -12,13 +14,14 @@ import Contexto from './Pages/Contexto'
 import Storage from './Pages/Storage'
 import Clima from './Pages/Clima'
 import ToDo from './Pages/ToDo'
-import Navbar from './components/Navbar'
 import Prueba from './components/Prueba'
 import GenerarContr from './Pages/GenerarContr'
 import SeguridadContr from './Pages/SeguridadContr'
 import ApiClima from './Pages/ApiClima'
+import Contenedor from './Layouts/Contenedor'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+  
   <BrowserRouter basename='/react-webapps/'>
     <Routes>
       <Route path='/' element={<Inicio />}/>
@@ -34,8 +37,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/referencias' element={<Referencias/>}/>
       <Route path='/contexto' element={<Contexto />}/>
       <Route path='/apiclima' element={<ApiClima />}/>
-      <Route path='/prueba' element={<Prueba />} />
+      <Route path='/prueba' element={<Contenedor />} />
       {/* <Route path='/navbar1' element={<Navbar />}/> */}
     </Routes>
   </BrowserRouter>,
 )
+

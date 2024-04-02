@@ -1,261 +1,179 @@
 .titulos {
-    color: #212529;
-    text-shadow: 0px 0px 14px #02ffd5;
-    padding: 1%;
+  color: #212529;
+  text-shadow: 0px 0px 4px #02ffd5;
+  padding: 1%;
 }
 
-.degradado {
-    width: 100%;
-    height: 300px;
-    background: linear-gradient(45deg,#961096, #7b1fa2,#a325d9, #02ffd5); 
-  }  
+a {
+  text-decoration: none;
+  color: #02ffd5;
+}
 
-/*https://slidebazaar.com/wp-content/uploads/2022/05/powerpoint-white-background-slide-SB02298.jpg*/
-/*https://images.saymedia-content.com/.image/t_share/MTkzODAzNTgyODUxMDY1MzI4/cool-css-backgrounds.jpg*/
+.contenedor {
+  width: 100%;
+  height: 90vh;
+}
+
 #background {
-    background-image: url("../img/background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
 }
 
 .navbar {
-    box-shadow: 0 1px 5px #ff9933;
+  box-shadow: 0 5px 0px #02ffd5;
 }
+
 .nav-link {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
+  text-decoration: none;
+  color: rgb(255, 255, 255);
 }
+
 .nav-link:hover {
-    color: #02ffd5;
+  color: #02ffd5;
 }
+
 #navbar_menu .a {
-    background-color: #212529;
+  background-color: #212529;
 }
 
 
 #inicio .card {
-    width: 100%;
-    height: 100px;
-    background-color: #212529;
-    border-radius: 20px;
-}
-#backInicio .row {
-    margin-bottom: 30%;
-    margin-top: 30%;
-}
-#inicio .card>* {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 4px #ff9933;
-    border-radius: 20px;
-}
-#inicio a {
-    text-decoration: none;
-    color: #02ffd5;
-}
-#backInicio {
-    margin-top: 40px;
-    max-height: 100vh;
-    min-height: auto;
-    width: 600vh
+  height: 120px;
+  background-color: #212529;
+  border-radius: 25px;
+  box-shadow: 0px 5px 0px #02ffd5;
 }
 
-#colores {
-    width: 100%;
-    padding: 0%;
-
-}
-.centro {
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.Tarjeta {
+  display: flex;
+  align-items: center;
 }
 
-#palabras{
-    padding: 15px;
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.664);
-    color: aliceblue;
+
+.colores {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#palabras {
+  padding: 15px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.664);
+  color: aliceblue;
 }
 
 @font-face {
-    font-family: 'TimeTraveler';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/TimeTravelerPal-Normal-Regular.ttf') format('truetype')
+  font-family: 'TimeTraveler';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/TimeTravelerPal-Normal-Regular.ttf') format('truetype')
 }
+
+
 #tiempo {
-    font-family: 'TimeTraveler';
-    font-size: 18vh;
-    color: #212529;
-    text-shadow: 0px 0px 13px #02ffd5;
-}
-#timer {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 100%;
-    height: 65vh;
+  font-family: 'TimeTraveler';
+  font-size: 20vw;
+  color: #212529;
+  text-shadow: 0px 5px 0px #02ffd5;
+  padding: 0;
+  margin: 0;
+  line-height: 100%;
 }
 
 #calculadora {
-    height: 65vh;
+  height: 65vh;
 }
+
+#teclado button {
+  width: 23%;
+  padding: 4%;
+  margin: 1%;
+  margin-bottom: 10px;
+  font-size: 16pt;
+}
+
+.operacion {
+  background-color: #02ffd5;
+  color: #212529;
+}
+
+.numero {
+  background-color: #212529;
+  color: #02ffd5;
+}
+
+/*
 #calculadora .card {
     background-color: rgba(0, 0, 0, 0.664);
     border-radius: 8px;
-    box-shadow: 0px 0px 0px #b1fff2;
-    padding-left: 3vh;
-    padding-right: 3vh;
+
 }
-#ingreso {
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-#teclado button {
-    width: 23%;
-    padding: 4%;
-    margin: 1%;
-    margin-bottom: 10px;
-    font-size: 16pt;
-}
-.operacion {
-    background-color: #02ffd5;
-    color: #212529;
-}
+
 .operacion:hover {
     background-color: #008871;
     color: #02ffd5;
     box-shadow: 0 0 6px #ff9933;
 }
-.numero {
-    background-color: #212529;
-    color: #02ffd5;
-}
+
 .numero:hover {
     background-color: #008871;
     box-shadow: 0 0 6px #ff9933;
-}
+} */
 
-#clima {
-    margin-bottom: 30px;
-}
-#clima .card {
-    text-align: center;
-    height: 56vh;
-    padding: 7%;
-    background-color: rgba(0, 0, 0, 0.664);
-    color: aliceblue;
-}
-#grados {
-    font-size: 265%;
-}
-#clima .form {
-    width: 100%;
-    height: 50px;
-    max-width: 400px;
-    position: relative;
-    overflow: hidden;
-}
-#clima .form input {
-    width: 100%;
-    height: 100%;
-    background: none;
-    color: #fff;
-    padding-top: 21px;
-    border: none;
-    outline: 0px;
-}
-#clima .form .lbl-nombre {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    border-bottom: 1px solid #ffffff1b;
-
-}
-#clima .form .lbl-nombre:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 100%;
-    border-bottom: 3px solid #02ffd5;
-    transform: translateX(-100%);
-    transition: all 0.3s ease;
-}
-#clima .text-nomb {
-    position: absolute;
-    bottom: 5px;
-    left: 0;
-    transition: all 0.3s ease;
-    color: #fff;
-}
-#clima .form input:focus+.lbl-nombre .text-nomb,
-.form input:valid+.lbl-nombre .text-nomb {
-    transform: translateY(-100%);
-    font-size: 14px;
-    color: #02ffd5;
-}
-#clima .form input:focus+.lbl-nombre:after,
-.form input:valid+.lbl-nombre:after {
-    transform: translateX(0%);
-}
-#icono {
-    font-size: 50px;
-    color: #02ffd5;
-}
 
 #tareas {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    width: 100%;
-    height: 65vh;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+  height: 65vh;
 }
-#tarea_nueva{
-    padding: 15px;
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.664);
-    color: aliceblue;
+
+#tarea_nueva {
+  padding: 15px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.664);
+  color: aliceblue;
 }
 
 #contrasenia {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 80%;
-    height: 65vh;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 80%;
+  height: 65vh;
 }
 
 .fondoClaro {
-    height: 50vh;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.664);
-    color: aliceblue;
+  height: 50vh;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.664);
+  color: aliceblue;
 }
 
 .PasBoton {
-    margin-right: 9px;
+  margin-right: 9px;
 }
 
 .PasMostrar {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
+.seguridadBaja2 {
+  background-color: #000000;
+}
 
 .seguridadBaja {
-    background-color: #310000;
+  background-color: #ff1e00;
 }
 
 .seguridadMedia {
-    background-color: #ff9933;
+  background-color: #ff9933;
 }
 
 .seguridadAlta {
-    background-color: #02ffd5;
+  background-color: #02ffd5;
 }
