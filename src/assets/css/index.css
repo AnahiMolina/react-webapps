@@ -85,46 +85,53 @@ a {
   line-height: 100%;
 }
 
-#calculadora {
-  height: 65vh;
-}
 
-#teclado button {
-  width: 23%;
+.btn-numero, .btn-tecla {
+  width: 20%;
   padding: 4%;
   margin: 1%;
-  margin-bottom: 10px;
-  font-size: 16pt;
+  font-size: 5%;
 }
 
-.operacion {
+.btn-numero {
   background-color: #02ffd5;
   color: #212529;
+  margin: 3px;
+  font-size: 120%;
+  border-radius: 10px;
 }
 
-.numero {
+.btn-numero:hover {
+  background-color: #037764;
+  box-shadow: 0 3px 0px #02ffd5;
+}
+
+.btn-tecla {
   background-color: #212529;
   color: #02ffd5;
+  margin: 3px;
+  margin-left: 0px;
+  font-size: 120%;
+  border-radius: 10px;
 }
 
-/*
+.btn-tecla:hover {
+  background-color: #171a1d;
+  color: #02ffd5;
+  box-shadow: 0 3px 0px #02ffd5;
+}
+
 #calculadora .card {
     background-color: rgba(0, 0, 0, 0.664);
     border-radius: 8px;
-
 }
 
-.operacion:hover {
-    background-color: #008871;
-    color: #02ffd5;
-    box-shadow: 0 0 6px #ff9933;
+#contrasenia {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 80%;
+  height: 65vh;
 }
-
-.numero:hover {
-    background-color: #008871;
-    box-shadow: 0 0 6px #ff9933;
-} */
-
 
 #tareas {
   margin-top: 30px;
@@ -140,26 +147,11 @@ a {
   color: aliceblue;
 }
 
-#contrasenia {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 80%;
-  height: 65vh;
-}
-
 .fondoClaro {
   height: 50vh;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.664);
   color: aliceblue;
-}
-
-.PasBoton {
-  margin-right: 9px;
-}
-
-.PasMostrar {
-  font-size: 2rem;
 }
 
 .seguridadBaja2 {
@@ -176,4 +168,8 @@ a {
 
 .seguridadAlta {
   background-color: #02ffd5;
+}
+
+.input_seguridad {
+  font-size: 5vh;
 }

@@ -54,7 +54,7 @@ export default function Navbar() {
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item disabled" aria-disabled='true' to="/seguridad">
+                  <Link className="dropdown-item" to="/seguridad">
                     <i className="fa-solid fa-lock" /> Seguridad
                   </Link>
                 </li>

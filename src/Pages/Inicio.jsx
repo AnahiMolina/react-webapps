@@ -1,12 +1,15 @@
 import React from 'react'
 import Contenedor from '../Layouts/Contenedor'
 import Tarjetas from '../components/Tarjetas'
-import SeguridadContr from './SeguridadContr'
 
 export default function Inicio() {
   return (
     <>
-      <Contenedor titulo='WebApps' icono='bx bxl-react bx-spin-hover bx-lg' clase='inicio'>
+      <Contenedor titulo='' icono='' clase='inicio'>
+      <div className='text-center titulos pt-0'>
+        <h1>WebApps</h1>
+        <i className='bx bxl-react bx-spin-hover bx-lg'></i>
+      </div>
         <div className="row">
           <div className="col-md-3 mb-5">
             <Tarjetas link='/colores' nombre='Colores' />
@@ -19,9 +22,6 @@ export default function Inicio() {
           </div>
           <div className="col-md-3 mb-5">
             <Tarjetas link='/calculadora' nombre='Calculadora' />
-          </div>
-          <div className="col-md-3 mb-5">
-            <Tarjetas link='tareas' nombre='Tareas' />
           </div>
         </div>
       </Contenedor>
