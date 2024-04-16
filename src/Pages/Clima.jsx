@@ -61,7 +61,6 @@ export default function Clima() {
       })
   }, [])
 
-
   return (
     <>
       <Contenedor titulo='Clima' icono='bx bx-sun bx-flashing-hover bx-lg' clase='clima'>

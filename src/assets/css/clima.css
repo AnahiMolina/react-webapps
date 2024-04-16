@@ -74,3 +74,4 @@
 .form input:valid+.lbl-nombre:after {
     transform: translateX(0%);
 }
+

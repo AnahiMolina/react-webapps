@@ -34,6 +34,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/referencias' element={<Referencias/>}/>
       <Route path='/contexto' element={<Contexto />}/>
       <Route path='/apiclima' element={<ApiClima />}/>
+      
     </Routes>
   </BrowserRouter>,
 )
