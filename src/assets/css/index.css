@@ -11,22 +11,22 @@ a {
 
 .contenedor {
   width: 100%;
-  height: 90vh;
+  max-width: 100%;
+  height: 100vh;
 }
 
 #background {
-  background-image: url("../img/background.jpg");
+  background-image: url("../img/background.webp");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
-  height: 100vh;
 }
 
 .navbar {
   box-shadow: 0 5px 0px #02ffd5;
+  background-color: #212529;
 }
 
-.nav-link {
+.nav-link, .navbar-brand {
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
@@ -35,10 +35,9 @@ a {
   color: #02ffd5;
 }
 
-#navbar_menu .a {
-  background-color: #212529;
+.navbar-toggler, .navbar-toggler-icon{
+  border-color: #02ffd5;
 }
-
 
 #inicio .card {
   height: 120px;

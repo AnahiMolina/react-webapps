@@ -1,16 +1,19 @@
-#clima {
-    margin-bottom: 30px;
-}
 #clima .card {
     text-align: center;
-    height: 56vh;
-    padding: 7%;
     background-color: rgba(0, 0, 0, 0.664);
     color: aliceblue;
+    width: 60%;
 }
-#grados {
+
+.grados {
     font-size: 265%;
 }
+
+#icono {
+    font-size: 50px;
+    color: #02ffd5;
+}
+
 #clima .form {
     width: 100%;
     height: 50px;
@@ -18,6 +21,7 @@
     position: relative;
     overflow: hidden;
 }
+
 #clima .form input {
     width: 100%;
     height: 100%;
@@ -27,6 +31,7 @@
     border: none;
     outline: 0px;
 }
+
 #clima .form .lbl-nombre {
     position: absolute;
     bottom: 0;
@@ -37,6 +42,7 @@
     border-bottom: 1px solid #ffffff1b;
 
 }
+
 #clima .form .lbl-nombre:after {
     content: '';
     position: absolute;
@@ -48,6 +54,7 @@
     transform: translateX(-100%);
     transition: all 0.3s ease;
 }
+
 #clima .text-nomb {
     position: absolute;
     bottom: 5px;
@@ -55,17 +62,15 @@
     transition: all 0.3s ease;
     color: #fff;
 }
+
 #clima .form input:focus+.lbl-nombre .text-nomb,
 .form input:valid+.lbl-nombre .text-nomb {
     transform: translateY(-100%);
     font-size: 14px;
     color: #02ffd5;
 }
+
 #clima .form input:focus+.lbl-nombre:after,
 .form input:valid+.lbl-nombre:after {
     transform: translateX(0%);
-}
-#icono {
-    font-size: 50px;
-    color: #02ffd5;
 }
