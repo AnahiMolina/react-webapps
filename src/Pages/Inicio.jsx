@@ -20,7 +20,7 @@ export default function Inicio() {
           <div className="col-md-3 mb-5">
             <Tarjetas link='/reloj' nombre='Reloj' />
           </div>
-          <div className="col-md-3 mb-5">
+          <div className="col-md-3">
             <Tarjetas link='/calculadora' nombre='Calculadora' />
           </div>
         </div>

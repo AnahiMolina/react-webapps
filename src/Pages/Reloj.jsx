@@ -16,21 +16,21 @@ export default function Reloj() {
     const intervalId = setInterval(actualizarReloj, 1000);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [])
 
   return (
     <>
       <Contenedor titulo='Reloj' icono='bx bx-time-five bx-spin-hover bx-lg' clase='timer'>
-          <div className='row'>
-            <div className='col-12'>
-              <div id='tiempo'>
-                <div className='text-center' id='reloj' />
-              </div>
-              <div className='text-center'>
-                <h1 id='fecha' />
-              </div>
+        <div className='row'>
+          <div className='col-12'>
+            <div id='tiempo'>
+              <div className='text-center' id='reloj' />
+            </div>
+            <div className='text-center'>
+              <h1 id='fecha' />
             </div>
           </div>
+        </div>
       </Contenedor>
     </>
   );

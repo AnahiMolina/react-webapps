@@ -1,16 +1,13 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
 import ComponenteA from '../components/ComponenteA'
 import ComponenteB from '../components/ComponenteB'
 import { ComponentesProvider } from '../Context/ComponentesContext'
 import Boton from '../components/Boton'
-import Prueba from '../components/Prueba'
 
 
 export default function Contexto() {
     return (
         <div>
-            <Prueba />
             <div className='container mt-5'>
                 <ComponentesProvider >
                     <div className="row">
