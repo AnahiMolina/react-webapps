@@ -1,10 +1,10 @@
-import React, { useRef, useState } from 'react';
-import Alerta from '../components/Alerta';
-import Contenedor from '../Layouts/Contenedor';
+import React, { useRef, useState } from 'react'
+import Alerta from '../components/Alerta'
+import Contenedor from '../Layouts/Contenedor'
 
 export default function SeguridadContr() {
   const [textoSeguridad, setTextoSeguridad] = useState('')
-  const [mostrarContraseña, setMostrarContraseña] = useState(false);
+  const [mostrarContraseña, setMostrarContraseña] = useState(false)
   const [contrasena, setContrasena] = useState('')
   const progressBarRef = useRef(null)
   const alertaRef = useRef(null)
@@ -95,17 +95,17 @@ export default function SeguridadContr() {
 
   return (
     <>
-      <Contenedor titulo='Verificar Seguridad' icono='fa-solid fa-lock' clase=''>
+      <Contenedor titulo='Verificar Seguridad' icono='bi bi-bag-check' clase=''>
         <br />
         <div className='row'>
           <div className='col-md-12'>
             <div className="input-group">
               <input onChange={ChangePassword} type={mostrarContraseña ? "text" : "password"} className="form-control input_seguridad" placeholder='Escribe tu contraseña...' />
               <span className="input-group-text" onClick={() => setMostrarContraseña(!mostrarContraseña)}>
-                {mostrarContraseña ? <i className='bx bx-hide' /> : <i className='bx bx-show' />}
+                {mostrarContraseña ? <i className='bi bi-eye-slash' /> : <i className='bi bi-eye' />}
               </span>
               <span className="input-group-text" onClick={Copiar}>
-                <i className='bx bx-copy' />
+                <i className='bi bi-copy' />
               </span>
             </div>
             <div className="progress mt-1" role="progressbar" aria-label="Seguridad" aria-valuemin="0" aria-valuemax="100">
@@ -115,8 +115,12 @@ export default function SeguridadContr() {
             <h3>{textoSeguridad}</h3>
           </div>
         </div>
-        <Alerta estilo='info' mensaje='Texto Copiado' ref={alertaRef} />
+        <div className='col-6'>
+          <Alerta estilo='info' mensaje='Texto Copiado' ref={alertaRef} />
+        </div>
+        <div className='col-6'>
+        </div>
       </Contenedor >
     </>
-  );
+  )
 }

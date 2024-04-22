@@ -1,9 +1,8 @@
-import React, { Children } from 'react'
 import Navbar from '../components/Navbar'
 
 export default function Contenedor(props) {
   return (
-    <div id='background'>
+    <div className='background'>
       <Navbar />
       <div className='container-md contenedor' id={props.clase}>
         <div className='text-center titulos'>

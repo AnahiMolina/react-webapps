@@ -7,56 +7,56 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg sticky-top bg-dark">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          <i className='bx bxs-plane-alt bx-tada-hover' /> WebApps
+          <i className='bi bi-airplane-engines' /> WebApps
         </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon" />
+          <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link" to="/colores">
-                <i className='bx bx-palette bx-tada-hover' /> Colores
+                <i className='bi bi-palette' /> Colores
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/caracteres">
-                <i className='bx bx-file-find bx-tada-hover' /> Caracteres
+                <i className='bi bi-pen' /> Caracteres
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/reloj">
-                <i className='bx bx-time-five bx-tada-hover' /> Reloj
+                <i className='bi bi-stopwatch' /> Reloj
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/calculadora">
-                <i className='bx bx-calculator bx-tada-hover' /> Calculadora
+                <i className='bi bi-calculator' /> Calculadora
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/clima">
-                <i className='bx bx-sun bx-tada-hover' /> Clima
+                <i className='bi bi-cloud-sun' /> Clima
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/tareas">
-                <i className='bx bx-task bx-tada-hover' /> Tareas
+                <i className='bi bi-check2-circle' /> Tareas
               </Link>
             </li>
             <li className="nav-item dropdown">
               <Link className="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i className='bx bx-shield bx-tada-hover' /> Contraseñas
+                <i className='bi bi-shield-lock' /> Contraseñas
               </Link>
               <ul className="dropdown-menu">
                 <li>
                   <Link className="dropdown-item" to="/generar">
-                    <i className='bx bx-cog' /> Generar
+                    <i className='bi bi-gear' /> Generar
                   </Link>
                 </li>
                 <li>
                   <Link className="dropdown-item" to="/seguridad">
-                    <i className="fa-solid fa-lock" /> Seguridad
+                    <i className="bi bi-bag-check" /> Seguridad
                   </Link>
                 </li>
               </ul>
@@ -67,3 +67,4 @@ export default function Navbar() {
     </nav>
   )
 }
+

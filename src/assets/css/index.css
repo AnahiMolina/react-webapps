@@ -1,7 +1,7 @@
 .titulos {
   color: #212529;
   text-shadow: 0px 0px 4px #02ffd5;
-  padding: 1%;
+  padding-top: 20px;
 }
 
 a {
@@ -10,14 +10,12 @@ a {
 }
 
 .contenedor {
-  width: 100%;
-  max-width: 100%;
   height: 100vh;
 }
 
 
-#background {
-  background-image: url("../img/background.webp");
+.background {
+  background-image: url("https://images.unsplash.com/photo-1642418423389-fff4d83d28a4?q=80&w=1867&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -27,7 +25,8 @@ a {
   background-color: #212529;
 }
 
-.nav-link, .navbar-brand {
+.nav-link,
+.navbar-brand {
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
@@ -36,7 +35,8 @@ a {
   color: #02ffd5;
 }
 
-.navbar-toggler, .navbar-toggler-icon{
+.navbar-toggler,
+.navbar-toggler-icon {
   border-color: #02ffd5;
 }
 
@@ -70,14 +70,14 @@ a {
 @font-face {
   font-family: 'TimeTraveler';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 360;
   src: url('/TimeTravelerPal-Normal-Regular.ttf') format('truetype')
 }
 
 
 #tiempo {
   font-family: 'TimeTraveler';
-  font-size: 20vw;
+  font-size: 20rem;
   color: #212529;
   text-shadow: 0px 5px 0px #02ffd5;
   padding: 0;
@@ -86,7 +86,8 @@ a {
 }
 
 
-.btn-numero, .btn-tecla {
+.btn-numero,
+.btn-tecla {
   width: 20%;
   padding: 4%;
   margin: 1%;
@@ -122,34 +123,13 @@ a {
 }
 
 #calculadora .card {
-    background-color: rgba(0, 0, 0, 0.664);
-    border-radius: 8px;
-}
-
-#contrasenia {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 80%;
-  height: 65vh;
-}
-
-#tareas {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  width: 100%;
-  height: 65vh;
+  background-color: rgba(0, 0, 0, 0.664);
+  border-radius: 8px;
 }
 
 #tarea_nueva {
   padding: 15px;
   border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.664);
-  color: aliceblue;
-}
-
-.fondoClaro {
-  height: 50vh;
-  padding: 20px;
   background-color: rgba(0, 0, 0, 0.664);
   color: aliceblue;
 }
@@ -171,5 +151,5 @@ a {
 }
 
 .input_seguridad {
-  font-size: 5vh;
+  font-size: 2rem;
 }

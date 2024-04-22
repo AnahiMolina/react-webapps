@@ -18,7 +18,7 @@ export default function Caracteres() {
 
   return (
     <>
-      <Contenedor titulo='Contador de Caracteres' icono='bx bx-file-find bx-flashing-hover bx-lg' clase=''>
+      <Contenedor titulo='Contador de Caracteres' icono='bi bi-pen' clase=''>
         <div className='text-center'>
           <textarea id='palabras' className='form-control' rows="8" value={inputText} onChange={cambiante} />
           <br />

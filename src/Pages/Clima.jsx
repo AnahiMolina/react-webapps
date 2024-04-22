@@ -3,15 +3,15 @@ import Contenedor from '../Layouts/Contenedor';
 
 export default function Clima() {
   const [ciudad, setCiudad] = useState('Teziutlán')
-  const [temp, setTemp] = useState('20')
-  const [tmax, setTmax] = useState('25')
-  const [tmin, setTmin] = useState('17')
-  const [flike, setFlike] = useState('23')
-  const [desc, setDesc] = useState('Soleado')
-  const [icono, setIcono] = useState('x')
+  const [temp, setTemp] = useState('0')
+  const [tmax, setTmax] = useState('0')
+  const [tmin, setTmin] = useState('0')
+  const [flike, setFlike] = useState('0')
+  const [desc, setDesc] = useState('Sin datos')
+  const [icono, setIcono] = useState('bi bi-exclamation-triangle')
   const [mostrarInput, setMostrarInput] = useState(false);
 
-  useEffect(() => {
+  /* useEffect(() => {
     fetch('https://open-weather13.p.rapidapi.com/city/teziutlan/EN', {
       method: 'GET',
       headers: {
@@ -36,34 +36,34 @@ export default function Clima() {
         let icono = '';
         switch (desc) {
           case 'light rain':
-            icono = 'bx bx-cloud-light-rain';
+            icono = 'bi bi-cloud-drizzle';
             break;
           case 'scattered clouds':
-            icono = 'bx bxl-soundcloud'
+            icono = 'bi bi-cloud-haze2'
             break;
           case 'overcast clouds':
-            icono = 'bx bxs-cloud';
+            icono = 'bi bi-clouds';
             break
           case 'broken clouds':
-            icono = 'fa-solid fa-cloud-sun'
+            icono = 'bi bi-cloud-sun'
             break
           case 'clear skyligth rain':
-            icono = 'fa-solid fa-sun'
+            icono = 'bi bi-cloud-hail'
             break
           case 'clear sky':
-            icono = 'fa-regular fa-sun'
+            icono = 'bi bi-brightness-alt-high'
             break
           default:
-            icono = 'bx bx-question-mark';
+            icono = 'bi bi-cloud-sun';
             break;
         }
         setIcono(icono);
       })
-  }, [])
+  }, []) */
 
   return (
     <>
-      <Contenedor titulo='Clima' icono='bx bx-sun bx-flashing-hover bx-lg' clase='clima'>
+      <Contenedor titulo='Clima' icono='bi bi-cloud-sun' clase='clima'>
         <div className='row'>
           <div className="d-flex justify-content-center">
             <div className='card p-3'>
@@ -72,12 +72,12 @@ export default function Clima() {
                   <form className='form'>
                     <input type='text' value={ciudad} onChange={(event) => setCiudad(event.target.value)} required />
                     <label className='lbl-nombre'>
-                      <span className='text-nomb'><i className='bx bx-search-alt' /> Buscar Ciudad...</span>
+                      <span className='text-nomb'><i className='bi bi-search' /> Buscar Ciudad...</span>
                     </label>
                   </form>
                 ) : (
                   <h2 className="card-title" onClick={() => setMostrarInput(true)}>
-                    {ciudad || <><i className='bx bx-search-alt' />Buscar Ciudad...</>}
+                    {ciudad || <><i className='bi bi-search' />Buscar Ciudad...</>}
                   </h2>
                 )}
                 <hr />
@@ -92,7 +92,7 @@ export default function Clima() {
                   <div className="col-sm-6">
                     <h5>Sensación Térmica:</h5>
                     <p className='grados'>{flike}</p>
-                    <i id='icono' className='bx bx-wind'></i>
+                    <i id='icono' className='bi bi-thermometer-sun'></i>
                     <hr />
                     <p>Temperatura Mínima: {tmin}</p>
                   </div>

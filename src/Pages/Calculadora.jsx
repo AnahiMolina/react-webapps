@@ -36,7 +36,7 @@ export default function Calculadora() {
   }
   return (
     <>
-      <Contenedor titulo='Calculadora' icono='bx bx-calculator' clase='calculadora'>
+      <Contenedor titulo='Calculadora' icono='bi bi-calculator' clase='calculadora'>
         <div className='row d-flex justify-content-center'>
           <div className='col-sm-5'>
             <div className='card p-4'>

@@ -1,6 +1,5 @@
-import React, { useState, useRef } from 'react';
-import Alerta from '../components/Alerta';
-import Contenedor from '../Layouts/Contenedor';
+import React, { useEffect,useState, useRef } from 'react'
+import Contenedor from '../Layouts/Contenedor'
 
 export default function GenerarContr() {
   const mayusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -15,11 +14,10 @@ export default function GenerarContr() {
   const [incluyeNumeros, setIncluyeNumeros] = useState(true)
   const [incluyeSimbolos, setIncluyeSimbolos] = useState(true)
   const [textoSeguridad, setTextoSeguridad] = useState('')
+
   const progressBarRef = useRef(null)
-  const alertaRef = useRef(null)
-  const handleClick = () => {
-    alertaRef.current.mostrarAlerta()
-  }
+  const popoverTriggerRef = useRef(null)
+  const popoverRef = useRef([])
 
   function crear(longitud) {
     let caracteres = ''
@@ -121,10 +119,24 @@ export default function GenerarContr() {
     navigator.clipboard.writeText(contrasenia)
   }
 
+  useEffect(() => {
+    if (popoverTriggerRef.current) {
+      const popoverTriggerEl = popoverTriggerRef.current;
+      const popover = new bootstrap.Popover(popoverTriggerEl);
+      popoverRef.current.push(popover);
+    }
+
+    return () => {
+      popoverRef.current.forEach(popover => {
+        popover.dispose();
+      });
+    };
+  }, []);
+
   return (
     <>
-      <Contenedor titulo='Contraseñas' icono='bx bx bx-shield bx-tada-hover bx-lg' clase='contrasenia'>
-        <div className='row'>
+      <Contenedor titulo='Contraseñas' icono='bi bi-gear' clase=''>
+        <div className='row d-flex justify-content-center'>
           <div className='col-4'>
             <div className='card'>
               <ul className="list-group list-group-flush">
@@ -152,8 +164,13 @@ export default function GenerarContr() {
                   </div>
                 </li>
                 <li className="list-group-item">
-                  <button onClick={() => crear(longitud)} className="btn btn-primary w-100 mt-3">Crear</button>
-                  <button onClick={() => { copiar(); handleClick(); }} className="btn btn-primary w-100 mt-3">Copiar</button>
+                  <button onClick={() => crear(longitud)} className="btn btn-primary w-100 mt-3">
+                    Crear
+                  </button>
+                  <button ref={popoverTriggerRef} type="button" onClick={() => copiar()} className="btn btn-primary w-100 mt-3"  data-bs-toggle="popover" data-bs-placement="right"
+                  data-bs-content="¡Contraseña Copiada!">
+                    Copiar
+                  </button>
                 </li>
               </ul>
             </div>
@@ -165,10 +182,9 @@ export default function GenerarContr() {
             </div>
             <br />
             <h3>{textoSeguridad}</h3>
-            <Alerta estilo='info' mensaje='¡Contraseña copiada a Portapapeles ❤️!' ref={alertaRef} />
           </div>
         </div>
       </Contenedor>
     </>
-  );
+  )
 }
