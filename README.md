@@ -18,7 +18,7 @@
 
 1. **Clona este repositorio**: 
 ```sh
-git clone https://github.com/tu-usuario/nombre-del-repo.git
+git clone https://github.com/AnahiMolina/react-webapps.git
 ```
 
 2. **Instala las dependencias**: 
