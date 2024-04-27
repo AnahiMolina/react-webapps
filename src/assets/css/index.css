@@ -88,23 +88,24 @@ a {
 
 .btn-numero,
 .btn-tecla {
+  height: 65px;
   width: 20%;
   padding: 4%;
-  margin: 1%;
-  font-size: 5%;
+  font-size: 1rem;
 }
 
 .btn-numero {
   background-color: #02ffd5;
   color: #212529;
   margin: 3px;
-  font-size: 120%;
+  font-size: 1rem;
   border-radius: 10px;
 }
 
 .btn-numero:hover {
-  background-color: #037764;
+  background-color: #0f5e50;
   box-shadow: 0 3px 0px #02ffd5;
+  color: #02ffd5;
 }
 
 .btn-tecla {
@@ -112,7 +113,7 @@ a {
   color: #02ffd5;
   margin: 3px;
   margin-left: 0px;
-  font-size: 120%;
+  font-size: 1rem;
   border-radius: 10px;
 }
 
