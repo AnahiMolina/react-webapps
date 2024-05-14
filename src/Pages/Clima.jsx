@@ -7,11 +7,12 @@ export default function Clima() {
   const [tmax, setTmax] = useState('0')
   const [tmin, setTmin] = useState('0')
   const [flike, setFlike] = useState('0')
-  const [desc, setDesc] = useState('Sin datos')
+  const [descApi, setDescApi] = useState('Sin datos')
+  const [desc, setDesc] = useState('')
   const [icono, setIcono] = useState('bi bi-exclamation-triangle')
   const [mostrarInput, setMostrarInput] = useState(false);
 
-  /* useEffect(() => {
+  useEffect(() => {
     fetch('https://open-weather13.p.rapidapi.com/city/teziutlan/EN', {
       method: 'GET',
       headers: {
@@ -27,39 +28,46 @@ export default function Clima() {
       })
       .then(data => {
         setCiudad(data.name)
-        setTemp(`${Math.ceil((data.main.temp - 32) * (5 / 9))} °C`)
-        setTmax(`${Math.ceil((data.main.temp_max - 32) * (5 / 9))} °C`)
-        setTmin(`${Math.ceil((data.main.temp_min - 32) * (5 / 9))} °C`)
-        setFlike(`${Math.ceil((data.main.feels_like - 32) * (5 / 9))} °C`)
-        setDesc(data.weather[0].description)
+        setTemp(Math.round((data.main.temp - 32) / 1.8))
+        setTmax(Math.round((data.main.temp_max - 32) / 1.8))
+        setTmin(Math.round((data.main.temp_min - 32) / 1.8))
+        setFlike(Math.round((data.main.feels_like - 32) / 1.8))
+        setDescApi(data.weather[0].description)
 
         let icono = '';
-        switch (desc) {
+        switch (descApi) {
           case 'light rain':
-            icono = 'bi bi-cloud-drizzle';
+            icono = 'bi bi-cloud-drizzle'
+            setDesc('Lluvia Ligera')
             break;
           case 'scattered clouds':
             icono = 'bi bi-cloud-haze2'
+            setDesc('Nubes Dispersas')
             break;
           case 'overcast clouds':
-            icono = 'bi bi-clouds';
+            icono = 'bi bi-clouds'
+            setDesc('Cielo Nublado')
             break
           case 'broken clouds':
             icono = 'bi bi-cloud-sun'
+            setDesc('Nubes Dispersas')
             break
           case 'clear skyligth rain':
             icono = 'bi bi-cloud-hail'
+            setDesc('Cielo Despejado / lluvia ligera')
             break
           case 'clear sky':
             icono = 'bi bi-brightness-alt-high'
+            setDesc('Cielo Despejado')
             break
           default:
             icono = 'bi bi-cloud-sun';
+            setDesc(descApi)
             break;
         }
         setIcono(icono);
       })
-  }, []) */
+  }, [])
 
   return (
     <>
@@ -76,25 +84,24 @@ export default function Clima() {
                     </label>
                   </form>
                 ) : (
-                  <h2 className="card-title" onClick={() => setMostrarInput(true)}>
+                  <h1 className="card-title" onClick={() => setMostrarInput(true)}>
                     {ciudad || <><i className='bi bi-search' />Buscar Ciudad...</>}
-                  </h2>
+                  </h1>
                 )}
                 <hr />
                 <div className='row'>
-                  <div className='col-sm-6'>
-                    <h5>{desc}</h5>
-                    <p className='grados'>{temp}</p>
+                  <div className='col-sm-7'>
+                    <h3>{desc}</h3>
                     <i id='icono' className={icono}></i>
-                    <hr />
-                    <p>Temperatura Máxima: {tmax}</p>
                   </div>
-                  <div className="col-sm-6">
-                    <h5>Sensación Térmica:</h5>
-                    <p className='grados'>{flike}</p>
-                    <i id='icono' className='bi bi-thermometer-sun'></i>
+                  <div className="col-sm-5">
+                    <h3 className='grados'>{temp}°C</h3>
+                    {/*  <p>Temperatura Mínima: {tmin}</p> */}
+                  </div>
+                  <div className="col-12">
                     <hr />
-                    <p>Temperatura Mínima: {tmin}</p>
+                    <p>Temperatura Máxima: {tmax}°C</p>
+                    <p>Sensación Térmica: {flike}°C</p>
                   </div>
                 </div>
               </div>
