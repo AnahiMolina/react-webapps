@@ -140,6 +140,8 @@ a {
   color: aliceblue;
 }
 
+::placeholder { color: aliceblue; }
+
 .seguridadBaja2 {
   background-color: #000000;
 }
