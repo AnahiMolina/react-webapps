@@ -1,7 +1,7 @@
 import React from 'react'
 import Tarjetas from '../components/Tarjetas'
 import Navbar from '../components/Navbar'
-import Carousel from '../components/Carousel'
+//import Carousel from '../components/Carousel'
 
 export default function Inicio() {
   return (
@@ -10,7 +10,7 @@ export default function Inicio() {
         <Navbar />
         <div className="container-fluid">
 
-          <div className="container pt-4 pb-4">
+          {/* <div className="container pt-4 pb-4">
             <div className="p-5 bg-primary text-white rounded">
               <div className="row">
                 <div className="col-md-8">
@@ -34,7 +34,7 @@ export default function Inicio() {
                 Aquí encontrarás una colección de aplicaciones web  construidas utilizando la biblioteca de JavaScript, React. Desde aplicaciones simples hasta proyectos más complejos, hemos reunido una variedad de ejemplos para mostrar el potencial y la versatilidad de Vite React en el desarrollo web moderno.
               </p>
             </div>
-          </div>
+          </div> */}
 
           <div className="container mt-1">
             <div className="d-flex justify-content-center m-4">
