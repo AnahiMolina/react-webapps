@@ -49,16 +49,54 @@ a {
 .inicio .card {
   height: 142px;
   width: 300px;
-  background-color: #212529;
+  background: linear-gradient(135deg, #212529 0%, #1a1d21 100%);
   border-radius: 25px;
-  box-shadow: 0px 5px 0px #02ffd5;
+  box-shadow: 0px 5px 15px rgba(2, 255, 213, 0.3);
+  border: 1px solid rgba(2, 255, 213, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.inicio .card::before {
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(2, 255, 213, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.inicio .card:hover::before {
+  opacity: 1;
+}
+
+.inicio .card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0px 15px 30px rgba(2, 255, 213, 0.5);
+  border-color: #02ffd5;
 }
 
 .Tarjeta {
   display: flex;
   align-items: center;
+  animation: slideIn 0.5s ease;
 }
 
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 .colores {
   height: 80vh;
