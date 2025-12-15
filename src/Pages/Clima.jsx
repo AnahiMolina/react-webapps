@@ -13,11 +13,11 @@ export default function Clima() {
   const [mostrarInput, setMostrarInput] = useState(false);
 
   useEffect(() => {
-    fetch('https://open-weather13.p.rapidapi.com/city/teziutlan/EN', {
+    fetch(`${import.meta.env.VITE_WEATHER_API_URL}/teziutlan/EN`, {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': '1ff5db47e1mshd8979973b83c92ap1a7067jsn39c2272184df',
-        'X-RapidAPI-Host': 'open-weather13.p.rapidapi.com'
+        'X-RapidAPI-Key': import.meta.env.VITE_RAPIDAPI_KEY,
+        'X-RapidAPI-Host': import.meta.env.VITE_RAPIDAPI_HOST
       }
     })
       .then(response => {
