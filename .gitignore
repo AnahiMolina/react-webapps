@@ -29,3 +29,4 @@ dist-ssr
 .env.*.local
 
 # Archivos
+api.json

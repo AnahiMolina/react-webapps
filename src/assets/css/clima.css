@@ -20,6 +20,7 @@
     max-width: 400px;
     position: relative;
     overflow: hidden;
+    margin: 0 auto; /* Centra el formulario */
 }
 
 #clima .form input {
@@ -40,7 +41,6 @@
     height: 100%;
     pointer-events: none;
     border-bottom: 1px solid #ffffff1b;
-
 }
 
 #clima .form .lbl-nombre:after {
@@ -63,15 +63,22 @@
     color: #fff;
 }
 
-#clima .form input:focus+.lbl-nombre .text-nomb,
-.form input:valid+.lbl-nombre .text-nomb {
+/* Solo cuando tiene focus - se quita :valid */
+#clima .form input:focus+.lbl-nombre .text-nomb {
     transform: translateY(-100%);
     font-size: 14px;
     color: #02ffd5;
 }
 
-#clima .form input:focus+.lbl-nombre:after,
-.form input:valid+.lbl-nombre:after {
+/* Solo cuando tiene focus - se quita :valid */
+#clima .form input:focus+.lbl-nombre:after {
     transform: translateX(0%);
 }
 
+/* Estilos adicionales para cuando hay texto pero no focus */
+#clima .form input:not(:placeholder-shown)+.lbl-nombre .text-nomb {
+    transform: translateY(-100%);
+    font-size: 14px;
+    color: #02ffd5;
+    opacity: 0.7; /* Menos visible cuando no está en focus */
+}

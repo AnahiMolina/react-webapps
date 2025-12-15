@@ -12,7 +12,7 @@ export default function ApiClima() {
   const [mostrarInput, setMostrarInput] = useState(false);
 
   useEffect(() => {
-  fetch(`${import.meta.env.VITE_WEATHER_API_URL}/teziutlan/EN`, {
+  fetch(`${import.meta.env.VITE_WEATHER_API_URL}/.../EN`, {
     method: 'GET',
     headers: {
       'X-RapidAPI-Key': import.meta.env.VITE_RAPIDAPI_KEY,
