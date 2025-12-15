@@ -29,4 +29,3 @@ dist-ssr
 .env.*.local
 
 # Archivos
-src/Pages/ApiClima.jsx
